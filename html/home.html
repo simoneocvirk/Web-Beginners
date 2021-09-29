@@ -18,15 +18,50 @@
 				background-size: cover;
 			}
 			.header {
-				/*position: relative;*/
 				background-color: white;
 				color: #46444a;
-			}
-			.center {
 				display: flex;
-				justify-content: center;
-				align-items: center;
-				flex-direction: center;
+			}
+			.name {
+				margin-left: 20px;
+			}
+			.button {
+				background-color: #88858f;
+				border: none;
+				color: white;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 12px;
+				border-width: 0px;
+				border-style: solid;
+			}	
+			.buttonh:hover {
+				background-color: #46444a;
+			}
+			.search {
+				padding: 23px 20px;
+				position: absolute;
+				right: 80px;
+				top: 10px
+			}
+			.submission {
+				padding: 23px 10px;
+				position: absolute;
+				right: 165px;
+				top: 10px;
+			}
+			.register {
+				padding: 31px 10px;
+				background-color: white;
+				border-width: 0px;
+				color: #88858f;
+				position: absolute;
+				right: 15px;
+				top 15px;
+			}
+			.registerh:hover {
+				color: #46444a;
 			}
 			.bottom {
 				position: absolute;
@@ -38,13 +73,15 @@
 			}
 		</style>
 		<div class="header">
-			<title>WBs</title>
-			<h1>WEB BEGINNERS</h1>
+			<title>Web Beginners</title>
+			<h1 class="name">WEB BEGINNERS</h1>
+			<button class="button buttonh search">Search</button>
+			<button class="button buttonh submission">Submission</button>
+			<button class="button register registerh">Sign In</button>
 		</div>
 	</head>
 	<body class="bg">
 		<hr>
-		<p>paragraph<p>
 		<div class="bottom">Made by Simone Ocvirk and Yiqi Huang</div>
 	</body>
 </html>

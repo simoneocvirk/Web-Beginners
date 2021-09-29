@@ -11,77 +11,39 @@
 				font-family: arial;
 			}
 			.bg {
-				background-image: radial-gradient(circle at top, #a8a5ad 50px, #111017 1100px);
+				background-image: radial-gradient(circle at top, #9fbfdf 50px, #143658 900px);
+				height: 100%;
 				width: 100%;
 				background-position: center;
 				background-repeat: no-repeat;
 				background-size: cover;
 			}
-			.header {
-				background-color: white;
-				color: #46444a;
-				display: flex;
-			}
-			.name {
-				margin-left: 20px;
-			}
-			.button {
-				background-color: #88858f;
-				border: none;
-				color: white;
-				text-align: center;
+			.info {
+				position: absolute;
+				top: 40%;
+				left: 50%;
+				-moz-transform: translate(-50%, -40%);
+				-webkit-transform: translate(-50%, -40%);
+				transform: translate(-50%, -40%);
 				text-decoration: none;
-				display: inline-block;
-				font-size: 12px;
-				border-width: 0px;
-				border-style: solid;
-			}	
-			.buttonh:hover {
-				background-color: #46444a;
-			}
-			.search {
-				padding: 23px 20px;
-				position: absolute;
-				right: 80px;
-				top: 10px
-			}
-			.submission {
-				padding: 23px 10px;
-				position: absolute;
-				right: 165px;
-				top: 10px;
-			}
-			.register {
-				padding: 31px 10px;
-				background-color: white;
-				border-width: 0px;
-				color: #88858f;
-				position: absolute;
-				right: 15px;
-				top 15px;
-			}
-			.registerh:hover {
-				color: #46444a;
 			}
 			.bottom {
 				position: absolute;
 				top: 90%;
 				left: 50%;
 				-moz-transform: translate(-50%, -90%);
-				-webkit-transform: translate(-50, -90%);
+				-webkit-transform: translate(-50%, -90%);
 				transform: translate(-50%, -90%);
 			}
 		</style>
-		<div class="header">
-			<title>Web Beginners</title>
-			<h1 class="name">WEB BEGINNERS</h1>
-			<button class="button buttonh search">Search</button>
-			<button class="button buttonh submission">Submission</button>
-			<button class="button register registerh">Sign In</button>
-		</div>
 	</head>
 	<body class="bg">
-		<hr>
+		<div class="info">
+			<a href="home.html" style="text-decoration: none; color: white"><h1>Web Beginners</h1></a>
+			<h2>COMING SOON</h2>
+			<hr style="width:30%">
+			<h3>2 weeks left</h3>
+		</div>
 		<div class="bottom">Made by Simone Ocvirk and Yiqi Huang</div>
 	</body>
 </html>
