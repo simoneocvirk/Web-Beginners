@@ -71,16 +71,35 @@
 				-webkit-transform: translate(-50, -95%);
 				transform: translate(-50%, -95%);
 			}
+			.arrow {
+				border: solid white;
+				border-width: 0 5px 5px 0;
+				display: inline-block;
+				padding: 10px;
+				position: absolute;
+				left: 30px;
+				top: 115px;
+			}
+			.arrowh:hover {
+				border: solid #a8a5ad;
+				border-width: 0 5px 5px 0;
+			}
+			.left {
+				  transform: rotate(135deg);
+				  -webkit-transform: rotate(135deg);
+			}
 		</style>
 		<div class="header">
 			<title>Web Beginners</title>
 			<a href="home.html" style="text-decoration: none; color: #46444a"><h1 class="name">WEB BEGINNERS</h1></a>
 			<a href="search.html" style="text-decoration: none; color: white"><button class="button buttonh search">Search</button></a>
 			<a href="submission.html" style="text-decoration: none; color: white"><button class="button buttonh submission">Submission</button></a>
-			<a href="registration.html" style="text-decoration: none"><button class="button register registerh">Sign In</button></a>		</div>
+			<a href="registration.html" style="text-decoration: none"><button class="button register registerh">Sign In</button></a>
+		</div>
 	</head>
 	<body class="bg">
 		<hr>
+		<a href="results_sample.html" style="text-decoration: none"><i class="arrow left arrowh"></i></a>
 		<div class="bottom">Made by Simone Ocvirk and Yiqi Huang</div>
 	</body>
 </html>
