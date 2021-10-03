@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<head>
+	<title> Register now! </title>
+	<style>
+	body, html {
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-family: arial;
+      }
+	.bg {
+ 		background-image: radial-gradient(circle at top, #7e8783 50px, #262b29 1100px);
+        width: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;	
+  	}
+
+  	.fieldset {
+		margin: auto;
+ 		text-align: center;
+  	}
+  	
+  	.head {background-color: #4c5450;
+        color: white;
+        display: flex;
+    	position: relative;
+    	padding: 20px;}
+
+
+
+	</style>
+</head>
+
+<body class="bg"> 
+	<h1 class = "head">Welcome, new user!</h1>
+	<div>
+	<fieldset class="fieldset">
+			<legend>Sign up</legend>
+			<h4>Please enter your first name: </h4> 
+			<input type="text" name="firstname" required></input><br/>
+			<h4>Please enter your last name: </h4>
+			<input type="text" name="lastname" required></input><br/><br/>
+
+			<h4>Please enter your email address: </h4>
+			<input type="email" name="email"></input><br/><br/>
+
+			<h4>Please enter your password: </h4>
+			<input type="password" name="userpw"></input><br/>
+			<h4>Please repeat your password: </h4>
+			<input type="password" name="userpw"></input><br/><br/>
+
+			<h4>Gender:</h4> 
+			<input id="male" type="radio" name="gender" value="male"> 
+			<label for="male">male</label> 
+			<input id="female" type="radio" name="gender" value="female"> 
+			<label for="female">female</label> <br><br>
+			<hr>
+
+			<h4>Do you want us to push you the newest information on those best locations?</h4> 
+			<input id="yes" type="radio" name="infoPush" value="Yes"> 
+			<label for="yes">Yes</label> 
+			<input id="no" type="radio" name="infoPush" value="No, thanks"> 
+			<label for="no">No, thanks</label> <br><br>
+
+			<input type="submit" value="Submit" > 
+		</fieldset>
+	</div>
+</body>
+
+</html>
