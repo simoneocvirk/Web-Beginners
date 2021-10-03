@@ -3,21 +3,42 @@
 <head>
 	<title> Register now! </title>
 	<style>
-	body {
- 		background-image: url("wallpaper1.jpg");
- 		background-size: 500px 1000px;
- 		
+	body, html {
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-family: arial;
+      }
+	.bg {
+ 		background-image: radial-gradient(circle at top, #7e8783 50px, #262b29 1100px);
+        width: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;	
   	}
-  	.p1 {font-family: "Times New Roman", Times, serif;}
-	.p2 {font-family: Arial, Helvetica, sans-serif;}
+
+  	.fieldset {
+		margin: auto;
+ 		text-align: center;
+  	}
+  	
+  	.head {background-color: #4c5450;
+        color: white;
+        display: flex;
+    	position: relative;
+    	padding: 20px;}
+
+
 
 	</style>
 </head>
 
-<body > 
-	<h1 class = "p1" style = "color:black;">Welcome, new user!</h1>
-	<div class="p2">
-	<fieldset>
+<body class="bg"> 
+	<h1 class = "head">Welcome, new user!</h1>
+	<div>
+	<fieldset class="fieldset">
 			<legend>Sign up</legend>
 			<h4>Please enter your first name: </h4> 
 			<input type="text" name="firstname" required></input><br/>
@@ -37,6 +58,7 @@
 			<label for="male">male</label> 
 			<input id="female" type="radio" name="gender" value="female"> 
 			<label for="female">female</label> <br><br>
+			<hr>
 
 			<h4>Do you want us to push you the newest information on those best locations?</h4> 
 			<input id="yes" type="radio" name="infoPush" value="Yes"> 
@@ -44,7 +66,7 @@
 			<input id="no" type="radio" name="infoPush" value="No, thanks"> 
 			<label for="no">No, thanks</label> <br><br>
 
-			<input type="submit" value="Submit"> 
+			<input type="submit" value="Submit" > 
 		</fieldset>
 	</div>
 </body>
