@@ -1,43 +1,103 @@
 <!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body, html {
+				margin: 0;
+				height: 100%;
+				width: 100%;
+				text-align: center;
+				color: white;
+				font-family: arial;
+			}
+			.bg {
+				background-image: radial-gradient(circle at top, #a8a5ad 50px, #111017 1100px);
+				width: 100%;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			.header {
+				background-color: white;
+				color: #46444a;
+				display: flex;
+			}
+			.name {
+				margin-left: 20px;
+			}
+			.button {
+				background-color: #88858f;
+				border: none;
+				color: white;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 12px;
+				border-width: 0px;
+				border-style: solid;
+			}	
+			.buttonh:hover {
+				background-color: #46444a;
+			}
+			.search {
+				padding: 23px 20px;
+				position: absolute;
+				right: 80px;
+				top: 10px
+			}
+			.submission {
+				padding: 23px 10px;
+				position: absolute;
+				right: 165px;
+				top: 10px;
+			}
+			.register {
+				padding: 31px 10px;
+				background-color: white;
+				border-width: 0px;
+				color: #88858f;
+				position: absolute;
+				right: 15px;
+				top 15px;
+			}
+			.registerh:hover {
+				color: #46444a;
+			}
+			.bottom {
+				position: absolute;
+				top: 95%;
+				left: 50%;
+				-moz-transform: translate(-50%, -95%);
+				-webkit-transform: translate(-50, -95%);
+				transform: translate(-50%, -95%);
+			}
 
-<head>
-	<title> Register now! </title>
-	<style>
-	body, html {
-        margin: 0;
-        height: 100%;
-        width: 100%;
-        text-align: center;
-        color: white;
-        font-family: arial;
-      }
-	.bg {
- 		background-image: radial-gradient(circle at top, #7e8783 50px, #262b29 1100px);
-        width: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;	
-  	}
-
-  	.fieldset {
-		margin: auto;
- 		text-align: center;
-  	}
+			/*center the contents in fieldset*/
+			.fieldset {
+			margin: auto;
+ 			text-align: center;
+  			}
   	
-  	.head {background-color: #4c5450;
-        color: white;
-        display: flex;
-    	position: relative;
-    	padding: 20px;}
+  			.head {background-color: #4c5450;
+       		 color: white;
+        	display: flex;
+    		position: relative;
+    		padding: 20px;
+    		}
 
-
-
-	</style>
-</head>
-
-<body class="bg"> 
-	<h1 class = "head">Welcome, new user!</h1>
+		</style>
+		<div class="header">
+			<title>Web Beginners</title>
+			<a href="home.html" style="text-decoration: none; color: #46444a"><h1 class="name">WEB BEGINNERS</h1></a>
+			<a href="search.html" style="text-decoration: none; color: white"><button class="button buttonh search">Search</button></a>
+			<a href="submission.html" style="text-decoration: none; color: white"><button class="button buttonh submission">Submission</button></a>
+			<a href="registration.html" style="text-decoration: none"><button class="button register registerh">Sign Up</button></a>		</div>
+	</head>
+	<body class="bg">
+		<h1 class = "head">Welcome, new user!</h1>
 	<div>
+
+		<!--Main contents-->
 	<fieldset class="fieldset">
 			<legend>Sign up</legend>
 			<h4>Please enter your first name: </h4> 
@@ -54,10 +114,7 @@
 			<input type="password" name="userpw"></input><br/><br/>
 
 			<h4>Gender:</h4> 
-			<input id="male" type="radio" name="gender" value="male"> 
-			<label for="male">male</label> 
-			<input id="female" type="radio" name="gender" value="female"> 
-			<label for="female">female</label> <br><br>
+			<input type="text" name="gender" required></input><br/><br/>
 			<hr>
 
 			<h4>Do you want us to push you the newest information on those best locations?</h4> 
@@ -69,6 +126,7 @@
 			<input type="submit" value="Submit" > 
 		</fieldset>
 	</div>
-</body>
-
+		<hr>
+	
+	</body>
 </html>
