@@ -124,7 +124,7 @@ img {
 }
 
 /*Adjustment for tables in sample result*/
-table {
+.table {
   border-collapse: collapse;
   border-spacing: 0;
   border: 2px solid black;
