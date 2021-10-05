@@ -1,102 +1,27 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<style>
-			body, html {
-				margin: 0;
-				height: 100%;
-				width: 100%;
-				text-align: center;
-				color: white;
-				font-family: arial;
-			}
-			.bg {
-				background-image: radial-gradient(circle at top, #a8a5ad 50px, #111017 1100px);
-				width: 100%;
-				background-position: center;
-				background-repeat: no-repeat;
-				background-size: cover;
-				background-attachment: fixed;
-			}
-			.header {
-				background-color: white;
-				color: #46444a;
-				display: flex;
-			}
-			.name {
-				margin-left: 20px;
-			}
-			.button {
-				background-color: #88858f;
-				border: none;
-				color: white;
-				text-align: center;
-				text-decoration: none;
-				display: inline-block;
-				font-size: 12px;
-				border-width: 0px;
-				border-style: solid;
-			}	
-			.buttonh:hover {
-				background-color: #46444a;
-			}
-			.search {
-				padding: 23px 20px;
-				position: absolute;
-				right: 80px;
-				top: 10px
-			}
-			.submission {
-				padding: 23px 10px;
-				position: absolute;
-				right: 165px;
-				top: 10px;
-			}
-			.register {
-				padding: 31px 10px;
-				background-color: white;
-				border-width: 0px;
-				color: #88858f;
-				position: absolute;
-				right: 15px;
-				top 15px;
-			}
-			.registerh:hover {
-				color: #46444a;
-			}
-			.bottom {
-				position: absolute;
-				top: 95%;
-				left: 50%;
-				-moz-transform: translate(-50%, -95%);
-				-webkit-transform: translate(-50, -95%);
-				transform: translate(-50%, -95%);
-			}
-			/*center the contents in fieldset*/
-			.fieldset {
-				margin: auto;
- 				text-align: center;
-  			}
-  			.head {
-				background-color: #46444a;
-       		 		color: white;
-        			display: flex;
- 	   			position: relative;
-    				padding: 20px;
-    			}
-		</style>
-		<div class="header">
-			<title>Web Beginners</title>
-			<a href="home.html" style="text-decoration: none; color: #46444a"><h1 class="name">WEB BEGINNERS</h1></a>
-			<a href="search.html" style="text-decoration: none; color: white"><button class="button buttonh search">Search</button></a>
-			<a href="submission.html" style="text-decoration: none; color: white"><button class="button buttonh submission">Submission</button></a>
-			<a href="registration.html" style="text-decoration: none"><button class="button register registerh">Sign Up</button></a>		</div>
-	</head>
-	<body class="bg">
-		<h1 class = "head">Welcome, new user!</h1>
-	<div>
 
-		<!--Main contents-->
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="GenericFormat.css">
+<title> Register now! </title>
+</head>
+
+<body class="bg"> 
+<body class="bg" style="color: white;">
+<div class="header">
+	<div class="name">
+		<a href="home.html">WEB BEGINNERS</a>
+	</div>
+  
+  	<div class="header-right">
+      <a href="search.html" class="button buttonh">Search</a>
+      <a href="submission.html" class="button buttonh">Submission</a>
+      <a href="registration.html" class="button buttonh">Sign Up</a>   
+  	</div>
+</div>
+
+	<h1 style="text-align: center;">Welcome, new user!</h1>
+	<div>
 	<fieldset class="fieldset">
 			<legend>Sign up</legend>
 			<h4>Please enter your first name: </h4> 
@@ -125,7 +50,6 @@
 			<input type="submit" value="Submit" > 
 		</fieldset>
 	</div>
-		<hr>
-	
-	</body>
+</body>
+
 </html>
