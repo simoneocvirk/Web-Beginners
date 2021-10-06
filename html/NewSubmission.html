@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<link rel="stylesheet" href="GenericFormat.css">
+</head>
+
+<body class="bg" style="color: white;" >
+	<div class="header">
+		<div class="name">
+			<a href="home.html">WEB BEGINNERS</a>
+		</div>
+  
+  		<div class="header-right">
+	      <a href="search.html" class="button buttonh">Search</a>
+	      <a href="submission.html" class="button buttonh">Submission</a>
+	      <a href="registration.html" class="button buttonh">Sign Up</a>   
+  		</div>
+	</div>
+<hr>
+
+<div class="center" style="min-height: 80vh;">
+<h2>TO ADD A NEW OBJECT FILL OUT THE FORM BELOW</h2>
+		<form>	
+				<!--Text bar for entering location's name-->
+				<label><br><input type="text" placeholder="Name" style="width: 30%;"></br></label>
+				<!--Description text bar-->
+				<label><br><textarea type="text" placeholder="Description" cols="100" rows="10" style="font-family: arial;"></textarea></br></label>
+				<!--Create two blocks for two text bar on the same row-->
+				<div class="row">
+					<div class="col-6">
+						<label><input type="text" placeholder="Latitude" size="30" class="floatright"></label>	
+					</div>
+					<div class="col-6">
+						<label class="latlon"><input type="text" placeholder="Longitude" size="30" class="floatleft"></label>
+					</div>
+				</div>
+				<!--Image file upload-->
+				<div class="row">
+					<div class="col-12"> 
+						<label><input type="file" accept="image/*"></label>
+					</div>
+				</div>
+				<label><input type="submit"></label>
+				
+		</form>
+</div>
+<div class="footer">
+        <p>Made by Simone Ocvirk and Yiqi Huang</p>
+</div>
+</body>
+</html>
