@@ -147,7 +147,7 @@ img {
       /* Styles for selection bar */
       select {
           background-color: #FFF;
-        width: 30%;
+          width: 30%;
           border: 5px inset #46444a;
           border-radius: 5px 5px 5px 5px;
           padding: 10px;
@@ -157,12 +157,12 @@ img {
 
           }
 
-  .search {
-  width: 100%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
+     .search {
+         width: 100%;
+         position: relative;
+         display: flex;
+         justify-content: center;
+      }
 
       /* Search bar design */
       .searchTerm {
@@ -189,6 +189,7 @@ img {
         font-size: 10px;
       }
 
+/* The following is for individual sample page */
      /* Design of an arrow button, use to return back the sample result page */
 .arrow {
         border: solid white;
@@ -228,3 +229,38 @@ img {
         border: 2px solid #46444a;
      
       }
+
+/*The following is for submission page */
+      /*Adjustment for text area */
+      textarea {
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+        width: 45%;
+      }
+
+      /* Add media queries for text area input bar responsiveness */
+      @media screen and (max-width: 700px) {
+        textarea {
+          width: 80%;
+          margin-top: 0;
+        }
+      }
+
+      /* Add media queries for submit/text input bar responsiveness */
+      @media screen and (max-width: 700px) {
+       input[type=submit], input[type=text] {
+        width: 60%;
+        margin-top: 0;
+        float: none;
+      }
+    }
+
+    .floatleft{
+      float: left;
+    }
+
+    .floatright{
+      float: right;
+    }
