@@ -8,6 +8,7 @@ background-image: radial-gradient(circle at top, #a8a5ad 50px, #111017 1100px);
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
+background-attachment: fixed;
 }
 
 body {min-height: 100vh;}

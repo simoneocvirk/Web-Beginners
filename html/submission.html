@@ -1,100 +1,50 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<style>
-			body, html {
-				margin: 0;
-				height: 100%;
-				width: 100%;
-				text-align: center;
-				color: white;
-				font-family: arial;
-				box-sizing: border-box;
-			}
-			.bg {
-				background-image: radial-gradient(circle at top, #a8a5ad 50px, #111017 1100px);
-				width: 100%;
-				background-position: center;
-				background-repeat: no-repeat;
-				background-size: cover;
-			}
-			.header {
-				background-color: white;
-				color: #46444a;
-				display: flex;
-			}
-			.name {
-				margin-left: 20px;
-			}
-			.button {
-				background-color: #88858f;
-				border: none;
-				color: white;
-				text-align: center;
-				text-decoration: none;
-				display: inline-block;
-				font-size: 12px;
-				border-width: 0px;
-				border-style: solid;
-			}	
-			.buttonh:hover {
-				background-color: #46444a;
-			}
-			.search {
-				padding: 23px 20px;
-				position: absolute;
-				right: 80px;
-				top: 10px
-			}
-			.submission {
-				padding: 23px 10px;
-				position: absolute;
-				right: 165px;
-				top: 10px;
-			}
-			.register {
-				padding: 31px 10px;
-				background-color: white;
-				border-width: 0px;
-				color: #88858f;
-				position: absolute;
-				right: 15px;
-				top 15px;
-			}
-			.registerh:hover {
-				color: #46444a;
-			}
-			.bottom {
-				position: absolute;
-				top: 95%;
-				left: 50%;
-				-moz-transform: translate(-50%, -95%);
-				-webkit-transform: translate(-50, -95%);
-				transform: translate(-50%, -95%);
-			}
-		</style>
-		<div class="header">
-			<title>Web Beginners</title>
-			<a href="home.html" style="text-decoration: none; color: #46444a"><h1 class="name">WEB BEGINNERS</h1></a>
-			<a href="search.html" style="text-decoration: none; color: white"><button class="button buttonh search">Search</button></a>
-			<a href="submission.html" style="text-decoration: none; color: white"><button class="button buttonh submission">Submission</button></a>
-			<a href="registration.html" style="text-decoration: none"><button class="button register registerh">Sign Up</button></a>		</div>
-	</head>
-	<body class="bg">
-		<hr>
-		<h2>TO ADD A NEW OBJECT FILL OUT THE FORM BELOW</h2>
-		<form>
-			<label><br><input type="text" placeholder="Name" size="60"></br></label>
-			<label><br><textarea type="text" placeholder="Description" cols="100" rows="10" style="font-family: arial"></textarea></br></label>
-			<div>
-				<label style="padding-right: 20px"><br><input type="text" placeholder="Latitude" size="30"></label>
-				<label class="latlon"><input type="text" placeholder="Longitude" size="30"></br></label>
-			</div>
-			<label style="left: 55%"><br><input type="file" accept="image/*"></br></label>
-			<label><br><input type="submit"></br></label>
+<head>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<link rel="stylesheet" href="GenericFormat.css">
+</head>
+
+<body class="bg" style="color: white;" >
+	<div class="header">
+		<div class="name">
+			<a href="home.html">WEB BEGINNERS</a>
+		</div>
+  
+  		<div class="header-right">
+	      <a href="search.html" class="button buttonh">Search</a>
+	      <a href="submission.html" class="button buttonh">Submission</a>
+	      <a href="registration.html" class="button buttonh">Sign Up</a>   
+  		</div>
+	</div>
+<hr>
+
+<div class="center" style="min-height: 80vh;">
+<h2>TO ADD A NEW OBJECT FILL OUT THE FORM BELOW</h2>
+		<form>	
+				<!--Text bar for entering location's name-->
+				<label><br><input type="text" placeholder="Name" style="width: 30%;"></br></label>
+				<!--Description text bar-->
+				<label><br><textarea type="text" placeholder="Description" cols="100" rows="10" style="font-family: arial;"></textarea></br></label>
+				<!--Create two blocks for two text bar on the same row-->
+				<div class="row">
+					<div class="col-12">
+						<label><input type="text" placeholder="Latitude" size="30" class=""></label>	
+						<label class="latlon"><input type="text" placeholder="Longitude" size="30" class=""></label>
+					</div>
+				</div>
+				<!--Image file upload-->
+				<div class="row">
+					<div class="col-12"> 
+						<label><input type="file" accept="image/*"></label>
+					</div>
+				</div>
+				<label><input type="submit"></label>
+				
 		</form>
-		<div class="bottom">Made by Simone Ocvirk and Yiqi Huang</div>
-	</body>
+</div>
+<div class="footer">
+        <p>Made by Simone Ocvirk and Yiqi Huang</p>
+</div>
+</body>
 </html>
-
-
