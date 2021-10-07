@@ -1,0 +1,6 @@
+List of References
+
+https://stackoverflow.com/questions/24116546/stray-end-tag-img
+https://validator.w3.org/
+https://www.quora.com/How-do-I-link-a-submit-button-to-another-webpage-using-HTML
+https://jigsaw.w3.org/css-validator/

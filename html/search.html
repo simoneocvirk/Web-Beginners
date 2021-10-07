@@ -1,15 +1,16 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Search Page</title>
+	<title>Web Beginners</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
- 	
+ 	<meta charset="utf-8">
  	<link rel="stylesheet" href="GenericFormat.css">
 </head>
 
 <body class="bg" style="color: white;" >
 	<div class="header">
 	<div class="name">
-		<a href="home.html">WEB BEGINNERS</a>
+		<a href="index.html">WEB BEGINNERS</a>
 	</div>
   
   	<div class="header-right">
@@ -36,10 +37,9 @@
 
     	<div class="search"> 
     		<input type="search" id="search" name="search" placeholder="Ex: vegan" class="searchTerm"> <br>
-    		<a href="results_sample.html"> <!--link to another page by sumbit button-->
-    			<input type="submit" value="Submit" class="searchButton" > 
-    		</a>
-   		</div>	
+    		<!--link to another page by sumbit button-->
+    			<input type="submit" onclick="location.href='results_sample.html'" value="Submit" class="searchButton">
+   		</div>
   	</div>
 
 
@@ -47,7 +47,7 @@
 		<div class="col-6 center" style="padding: 30px;" >
 			<h2>Or...search it up by ratings!</h2>
 				<select name="rating" >
-					<optgroup>
+					<optgroup label="">
 						<option value="*" disabled selected>Please select...</option>
 						<option value="5 star rating">5 star rating</option>
 						<option value="4 star rating">4 star rating</option>
@@ -56,9 +56,8 @@
 						<option value="1 star rating">1 star rating</option>
 					</optgroup>
 					</select> <br>
-				<a href="results_sample.html"> <!--link to another page by sumbit button-->
-					<input type="submit" value="Submit" class="searchButton"> 
-				</a>
+				<!--link to another page by sumbit button-->
+					<input type="submit" onclick="location.href='results_sample.html';" value="Submit" class="searchButton"/>
 		</div>
 	</div>
 <hr>
