@@ -228,7 +228,6 @@ img {
         padding: 10px;
         border-color: #46444a;
         border: 2px solid #46444a;
-     
       }
 
 /*The following is for submission page */
@@ -265,3 +264,12 @@ img {
     .floatright{
       float: right;
     }
+
+    .photo img {
+	height: 40%;
+	width: 50%;
+	position: relative;
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+     }
