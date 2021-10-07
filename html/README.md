@@ -9,10 +9,10 @@ Add-On Task 2
 
 i. Describe briefly the different versions of graphics provided in step 2(a); \
 	include a sample of HTML code and explain how the different selectors \
-	work together. \
+	work together. 
 
 ii. List three positive goals that can be achieved using HTML5 <picture> and \
-	<source> attributes. \
+	<source> attributes.
 
 iii. List one negative about using HTML5 <picture> and <source> attributes. \
 	How can this negative be mitigated? 
