@@ -1,14 +1,15 @@
-Made by Simone Ocvirk and Yiqi Huang 
+Simone Ocvirk, ocvirks, 400232179
+Yiqi Huang, huany132, 400189575
 
-Website URL:	http://18.217.210.172/home.html \
+Website URL:	http://18.217.210.172/home.html 
 Github:		https://github.com/simoneocvirk/Web-Beginners.git 
 
-
+We did both add on task 1 and 2. Comments throughout the html files indicate where this is, and the answers to task 2 questions are below.
 
 Add-On Task 2 
 
-i. Describe briefly the different versions of graphics provided in step 2(a); \
-	include a sample of HTML code and explain how the different selectors \
+i. Describe briefly the different versions of graphics provided in step 2(a); 
+	include a sample of HTML code and explain how the different selectors 
 	work together.
 
 	The graphics included in our website are the two pictures of a map 
@@ -36,7 +37,7 @@ i. Describe briefly the different versions of graphics provided in step 2(a); \
 			<img src="src/Bridges1x.png"/> 
 		</picture>
 
-ii. List three positive goals that can be achieved using HTML5 <picture> and \
+ii. List three positive goals that can be achieved using HTML5 <picture> and 
 	<source> attributes.
 
 	1. Allows for more versatility, by having alternative pictures. 
@@ -45,7 +46,7 @@ ii. List three positive goals that can be achieved using HTML5 <picture> and \
 	3. Saves bandwidth since the correct format for the display is displayed. 
 
 
-iii. List one negative about using HTML5 <picture> and <source> attributes. \
+iii. List one negative about using HTML5 <picture> and <source> attributes. 
 	How can this negative be mitigated? 
 
 	Does not work on some older OS versions. This negative can be mitigated by 
