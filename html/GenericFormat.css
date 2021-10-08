@@ -46,7 +46,8 @@ body {min-height: 100vh;}
 .header-right {
   float: right;
 }
- 
+
+/* CSS for button */
 .button {
    background-color: #88858f;
    border: none;
@@ -56,6 +57,8 @@ body {min-height: 100vh;}
    border-style: solid;
  } 
       
+
+ /* CSS for button when cursor is hovering over it */
 .buttonh:hover {
    background-color: #46444a;
  }

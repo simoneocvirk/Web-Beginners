@@ -4,3 +4,10 @@ https://stackoverflow.com/questions/24116546/stray-end-tag-img
 https://validator.w3.org/
 https://www.quora.com/How-do-I-link-a-submit-button-to-another-webpage-using-HTML
 https://jigsaw.w3.org/css-validator/
+https://ogp.me/
+https://www.w3.org/International/questions/qa-html-encoding-declarations
+https://cards-dev.twitter.com/validator
+https://schema.org/Place#eg-0024
+https://developers.facebook.com/tools/debug/?q=http%3A%2F%2F18.217.210.172%2Findividual_sample.html
+https://www.google.com/maps/place/Bridges+Caf%C3%A9/@43.2628884,-79.9214274,21z/data=!3m1!5s0x882c84acef72da9d:0x655dd88a69773739!4m5!3m4!1s0x882c84acee4b16f1:0x70bf37755969c8ab!8m2!3d43.26293!4d-79.921271
+https://www.facebook.com/watch/?v=1084791878318145
