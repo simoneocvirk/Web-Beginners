@@ -193,6 +193,19 @@ img {
         font-size: 10px;
       }
 
+      /* Get location button design */
+      .searchLocation {
+        width: auto;
+        height: 30px;
+        border: 1px solid #46444a;
+        background: #46444a;
+        text-align: center;
+        color: #fff;
+        border-radius: 5px 5px 5px 5px;
+        cursor: pointer;
+        font-size: 10px;
+      }
+
 /* The following is for individual sample page */
      /* Design of an arrow button, use to return back the sample result page */
 .arrow {
