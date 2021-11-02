@@ -7,6 +7,7 @@
   	<meta charset="utf-8">	
  	<link rel="stylesheet" href="GenericFormat.css">
 	<script src="js/individual_sample.js"></script>
+	<script src="js/OpenLayers-2.13.1/OpenLayers.js"></script>
 
 	<!-- meta data for add on task 1, works for both facebook and twitter -->
 	<meta property="og:title" content="Web Beginners"/>
@@ -20,7 +21,7 @@
 	<title>Web Beginners</title>
 </head>
 
-<body class="bg" style="color: white;" >
+<body class="bg" style="color: white" onload="initmap()">
 	<div class="header">
 	<div class="name">
 		<a href="index.html">WEB BEGINNERS</a>
@@ -51,7 +52,11 @@
 		<br>decorated cafe is also the perfect spot to host your team meetings and
 		<br>charitable events.</p>
 		<br>	
-	
+
+
+		<!-- added in part 2 -->
+		<center><div id="basicMap" style="height: 30%; width: 70%"></div></center>
+
 			<div class="photo">
 				<picture>
 					<!-- the image is 475 pixels in width -->
