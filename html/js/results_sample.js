@@ -13,7 +13,7 @@ function loadmap(){
 
 //Add markers on the location
     var marker1 = L.marker([43.262951708321154, -79.9212761103261])
-                  .bindPopup("Here is the Bridges"+ "<br>" +'<a href="search.html">For more information</a>')   
+                  .bindPopup("Here is the Bridges"+ "<br>" +'<a href="individual_sample.html">For more information</a>')   
                   .addTo(mymap);
     var marker2 = L.marker([43.263648710083466, -79.91730295763841])
                   .bindPopup("Here is the La Piazza")
