@@ -136,6 +136,18 @@ img {
   margin-left: auto;
   margin-right: auto;
  }
+/*Adjustment for the embedded map in sample result*/
+  #map {
+    margin: 20px;
+    height: 300px; 
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* media query for responsive living map size*/
+@media screen and (max-width: 700px) {
+    #map {width: 100%;}
+}
 
 /*This class is for registration page*/
  .fieldset {
