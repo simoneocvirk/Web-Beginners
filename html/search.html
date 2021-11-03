@@ -21,6 +21,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
  	<meta charset="utf-8">
  	<link rel="stylesheet" href="GenericFormat.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 	<script src="js/search.js"></script>
 </head>
 
@@ -39,12 +40,13 @@
 </div>
 	<!-- additional button to register if haven't yet -->
 	<div class="center">
-	<h1> Search the best location through two methods! </h1>
+	<h1 class="animate__animated animate__backInDown"> Search the best location through three methods! </h1>
 	<a href="registration.html">
 		<h5 class="center"> Haven't registered yet? </h5>
 	</a>
 
 	<!--Using geolocation API get user's location-->
+	<!-- animation 3/10 -->
 	<button onclick="getLocation();location.href='results_sample.html';" class="searchLocation">Get your location and search near you!!</button>
 </div>
 	<hr>
