@@ -77,6 +77,10 @@ body {min-height: 100vh;}
   }
 }
 
+.row {
+  position: relative;
+}
+
 .row::after {
   content: "";
   clear: both;
