@@ -32,7 +32,7 @@
 	<div>
 	<!-- list of form inputs -->
 	<!-- insert javascript here for validate form-->
-	<form name = "RegForm" onsubmit = "return(validate());">
+	<form name = "RegForm" onsubmit = "return(validate());" method="post" action="registration.php">
 		<fieldset class="fieldset">
 			<legend>Sign up</legend>
 			<h4>Please enter your first name: </h4> 
@@ -46,7 +46,7 @@
 			<h4>Please enter your password: </h4>
 			<input type="password" name="userpw" id="firstPw"/><br/>
 			<h4>Please repeat your password: </h4>
-			<input type="password" name="userpw" id="secondPw"/><br/><br/>
+			<input type="password" name="userpwconfirm" id="secondPw"/><br/><br/>
 
 			<h4>Gender:</h4> 
 			<input type="text" name="gender" /><br/><br/>
