@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +36,19 @@
   	<div class="header-right">
       <a href="search.php" class="button buttonh">Search</a>
       <a href="submission.php" class="button buttonh">Submission</a>
-      <a href="registration.php" class="button buttonh">Sign Up</a>   
+      <?php
+        if (isset($_SESSION["valid"])) {
+            if ($_SESSION["valid"] == '1') {
+                ?>
+                <a href="logout.php" class="button buttonh">Sign Out</a>
+                <?php
+            }
+        } else {
+            ?>
+            <a href="registration.php" class="button buttonh">Sign Up</a>
+            <?php
+        }
+      ?>    
   	</div>
 </div>
 <hr>
