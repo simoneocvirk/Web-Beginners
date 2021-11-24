@@ -28,20 +28,20 @@
 <body class="bg" style="color: white;" >
 	<div class="header">
 	<div class="name">
-		<a href="index.html">WEB BEGINNERS</a>
+		<a href="index.php">WEB BEGINNERS</a>
 	</div>
   
   	<div class="header-right">
 	<!-- buttons for header -->
-      <a href="search.html" class="button buttonh">Search</a>
-      <a href="submission.html" class="button buttonh">Submission</a>
-      <a href="registration.html" class="button buttonh">Sign Up</a>   
+      <a href="search.php" class="button buttonh">Search</a>
+      <a href="submission.php" class="button buttonh">Submission</a>
+      <a href="registration.php" class="button buttonh">Sign Up</a>
   	</div>
 </div>
 	<!-- additional button to register if haven't yet -->
 	<div class="center">
 	<h1 class="animate__animated animate__backInDown"> Search the best location through three methods! </h1>
-	<a href="registration.html">
+	<a href="registration.php">
 		<h5 class="center"> Haven't registered yet? </h5>
 	</a>
 
