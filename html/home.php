@@ -28,13 +28,13 @@ if (isset($_SESSION["valid"])) {
 <body class="bg" style="color: white;" >
 	<div class="header">
 	<div class="name">
-		<a href="index.html">WEB BEGINNERS</a>
+		<a href="index.php">WEB BEGINNERS</a>
 	</div>
   
   	<div class="header-right">
 	<!-- header buttons -->
-      <a href="search.html" class="button buttonh">Search</a>
-      <a href="submission.html" class="button buttonh">Submission</a>
+      <a href="search.php" class="button buttonh">Search</a>
+      <a href="submission.php" class="button buttonh">Submission</a>
       <a href="logout.php" class="button buttonh">Sign Out</a>   
   	</div>
 </div>

@@ -46,6 +46,6 @@
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("sssddss", $name, $description, $address, $latitude, $longitude, $photo, $video);
         $stmt->execute();
-        echo file_get_contents("index.html");
+        header("Location: home.php");
     }
 ?>

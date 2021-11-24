@@ -47,7 +47,7 @@
 
 	<!--Using geolocation API get user's location-->
 	<!-- animation 3/10 -->
-	<button onclick="getLocation();location.href='results_sample.html';" class="searchLocation">Get your location and search near you!!</button>
+	<button onclick="getLocation();location.href='results_sample.php';" class="searchLocation">Get your location and search near you!!</button>
 </div>
 	<hr>
 
@@ -61,7 +61,7 @@
     	<div class="search"> 
     		<input type="search" id="search" name="search" placeholder="Ex: vegan" class="searchTerm"> <br>
     		<!--link to another page by sumbit button-->
-    			<input type="submit" onclick="location.href='results_sample.html'" value="Submit" class="searchButton">
+    			<input type="submit" onclick="location.href='results_sample.php'" value="Submit" class="searchButton">
    		</div>
   	</div>
 
@@ -80,7 +80,7 @@
 					</optgroup>
 					</select> <br>
 				<!--link to another page by sumbit button-->
-					<input type="submit" onclick="location.href='results_sample.html';" value="Submit" class="searchButton"/>
+					<input type="submit" onclick="location.href='results_sample.php';" value="Submit" class="searchButton"/>
 		</div>
 	</div>
 <hr>

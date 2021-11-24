@@ -16,7 +16,7 @@
 <body class="bg" style="color: white;" >
 	<div class="header">
 	<div class="name">
-		<a href="index.html">WEB BEGINNERS</a>
+		<a href="index.php">WEB BEGINNERS</a>
 	</div>
   
   	<div class="header-right">

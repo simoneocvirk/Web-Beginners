@@ -19,6 +19,6 @@
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("sssssi", $firstName, $lastName, $email, $password, $gender, $emailList);
         $stmt->execute();
-        echo file_get_contents("index.html");
+        header("Location: index.php");
     }
 ?>
