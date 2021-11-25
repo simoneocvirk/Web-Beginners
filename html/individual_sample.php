@@ -13,8 +13,32 @@ session_start();
  	<link rel="stylesheet" href="GenericFormat.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 	<script src="js/individual_sample.js"></script>
-	<script src="js/OpenLayers-2.13.1/OpenLayers.js"></script>
-
+ 	<!-- <script src="js/OpenLayers-2.13.1/OpenLayers.js"></script> -->
+    <script>
+        function addmarkers() {
+            var lats = "<?php
+            foreach ($_SESSION["search_results"] as $row) {
+                echo $row["latitude"] . " ";
+            }
+            ?>".split(" ");
+            var lons = "<?php
+            foreach ($_SESSION["search_results"] as $row) {
+                echo $row["longitude"] . " ";
+            }
+            ?>".split(" ");
+            var names = "<?php
+            foreach ($_SESSION["search_results"] as $row) {
+                echo $row["name"] . "~~~~";
+            }
+            ?>".split("~~~~");
+            lats.pop();
+            lons.pop();
+            names.pop();
+            for (let i = 0; i < lats.length; i++) {
+                addMarker(lats[i], lons[i], names[i]);
+            }
+        }
+    </script>
 	<!-- meta data for add on task 1, works for both facebook and twitter -->
 	<meta property="og:title" content="Web Beginners"/>
 	<meta property="og:url" content="https://18.217.210.172/individual_sample.html"/>
@@ -27,7 +51,7 @@ session_start();
 	<title>Web Beginners</title>
 </head>
 
-<body class="bg" style="color: white" onload="initmap()">
+<body class="bg" style="color: white" onload="loadmap()">
 	<div class="header">
 	<div class="name">
 		<a href="index.php">WEB BEGINNERS</a>
@@ -54,25 +78,15 @@ session_start();
 <hr>
 	<!--Starting microdata for add on task 1, so that advanced webparsers can recognize reviews-->
 	<div class="center" itemscope itemtype="https://schema.org/Review">
-	<div class="row" style="min-height: 65vh;" itemprop="itemReviewed" itemscope itemtype="https://schema.org/Restaurant">
-		
+	<div class="row" style="min-height: 65vh;" itemprop="itemReviewed" itemscope itemtype="https://schema.org/Restaurant">		
 		<a href="results_sample.php" style="text-decoration: none"><i class="arrow left arrowh"></i></a>
 		<!-- animation 9/10 -->
-		<h2 class="col-12 animate__animated animate__backInDown" itemprop="name">Bridges</h2>
-		<br>
-		<p>Introduced in 2005, Bridges Cafe was developed from a student-based initiative
-		<br>to introduce inclusiveness to the McMaster dining experience. Specialized in
-		<br>serving vegetarian and vegan options, Bridges caters to the ideological and
-		<br>religious needs of the student body and celebrates the diversity of culture,
-		<br>faith, gender, ability, sexual orientation and more, that is present in the
-		<br>McMaster community. Bridges is fitted with wireless internet, a comfortable
-		<br>seating area and delicious food options, making it a great study location.
-		<br>With booking availability and provided sound equipment, this beautifully
-		<br>decorated cafe is also the perfect spot to host your team meetings and
-		<br>charitable events.</p>
+        <h2 class="col-12 animate__animated animate__backInDown" itemprop="name"><?php echo $_SESSION["search_results"][intval($_POST["placeid"])]["name"] ?></h2> 
+        <br>
+        <p><?php echo $_SESSION["search_results"][intval($_POST["placeid"])]["description"] ?></p>
 		<br>	
 
-
+        <div id="map"></div>
 		<!-- added in part 2 -->
 		<center><div id="basicMap" style="width: 60%; height: 20vw;"></div></center>
 		<div style="height: 20%; width: 100%;"></div>
