@@ -59,6 +59,41 @@ session_start();
 <div id="map"></div>
 
 <div class="row" style="text-align: center;">
+    <?php
+        if (isset($_SESSION["search_results"])) {
+            foreach ($_SESSION["search_results"] as $row) { 
+                ?>
+                <div class="col-6 list">
+                    <a href="individual_sample.php" style="color: white"><h3 class="animate__animated animate__heartBeat"><?php echo $row["name"]; ?></h3></a>
+                </div>
+                <br>
+                <div class="photo">
+                    <picture>
+                        <img src=<?php echo "\"" . $row["picsrc"] . "\"" ?> alt=""/>
+                    </picture>
+                </div>
+                <div>
+                    <br>
+                    <hr>
+                    <table>
+                        <tr>
+                            <th>Location</th>
+                            <td><?php echo $row["address"]; ?></td>
+                        </tr>
+                        <tr>
+                            <th>Info</th>
+                            <td><?php echo $row["description"]; ?></td>
+                        </tr>
+                        <tr>
+                            <th>Rating</th>
+                            <td>Average Rating</td>
+                        </tr>
+                    </table>
+                </div>
+                <?php
+            }            
+        }
+    ?>
       <!--First location-->
       <div class="col-6 list" >
 	      <!-- animation 6/10 -->

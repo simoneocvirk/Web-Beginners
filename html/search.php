@@ -58,9 +58,6 @@ session_start();
 	<!-- additional button to register if haven't yet -->
 	<div class="center">
 	<h1 class="animate__animated animate__backInDown"> Search the best location through three methods! </h1>
-	<a href="registration.php">
-		<h5 class="center"> Haven't registered yet? </h5>
-	</a>
 
 	<!--Using geolocation API get user's location-->
 	<!-- animation 3/10 -->
@@ -74,12 +71,11 @@ session_start();
     	<h2 class="center">Search it up by the names!</h2>
     	
     	<br>
-
-    	<div class="search"> 
+        <form class="search" method="post" action="search_action.php"> 
     		<input type="search" id="search" name="search" placeholder="Ex: vegan" class="searchTerm"> <br>
     		<!--link to another page by sumbit button-->
-    			<input type="submit" onclick="location.href='results_sample.php'" value="Submit" class="searchButton">
-   		</div>
+            <input type="submit" value="Submit" class="searchButton">
+        </form>    
   	</div>
 
 
@@ -89,11 +85,11 @@ session_start();
 				<select name="rating" >
 					<optgroup label="">
 						<option value="*" disabled selected>Please select...</option>
-						<option value="5 star rating">5 star rating</option>
-						<option value="4 star rating">4 star rating</option>
-						<option value="3 star rating">3 star rating</option>
-						<option value="2 star rating">2 star rating</option>
-						<option value="1 star rating">1 star rating</option>
+						<option value="5">5 star rating</option>
+						<option value="4">4 star rating</option>
+						<option value="3">3 star rating</option>
+						<option value="2">2 star rating</option>
+						<option value="1">1 star rating</option>
 					</optgroup>
 					</select> <br>
 				<!--link to another page by sumbit button-->
