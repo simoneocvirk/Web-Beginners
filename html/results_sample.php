@@ -45,7 +45,7 @@ function addmarkers() {
     lons.pop();
     names.pop();
     for (let i = 0; i < lats.length; i++) {
-        addMarker(lats[i], lons[i], names[i]);
+        addMarker(lats[i], lons[i], names[i], i);
     }
 }
 </script>
@@ -94,7 +94,7 @@ function addmarkers() {
                 <div class="col-6 list">
 <form name="<?php echo "name" . strval($i) ?>" method="post" action="individual_sample.php">
 <input type="hidden" name="placeid" value=<?php echo "\"" . strval($i - 1) . "\"" ?>>
-                <!-- <a href="individual_sample.php"-->  <div onclick="document.forms['<?php echo "name" . strval($i) ?>'].submit();" style="color: white">
+                <div onclick="document.forms['<?php echo "name" . strval($i) ?>'].submit();" style="color: white">
 </form>
                     <h3 class="animate__animated animate__heartBeat"><?php echo $row["name"]; ?></h3>
                 </div>
