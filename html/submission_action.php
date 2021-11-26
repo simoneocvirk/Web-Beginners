@@ -2,6 +2,7 @@
     include('/home/ubuntu/mysql_auth.php');
     require 'vendor/autoload.php';
     $name = $_POST["name"];
+    $hours = $_POST["hours"];
     $description = $_POST["description"];
     $address = $_POST["address"];
     $latitude = $_POST["lat"];
@@ -42,9 +43,9 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     } else {
-        $sql = "INSERT INTO places (name, description, address, latitude, longitude, photo, video) VALUES (?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO places (name, hours, description, address, latitude, longitude, photo, video) VALUES (?,?,?,?,?,?,?,?)";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sssddss", $name, $description, $address, $latitude, $longitude, $photo, $video);
+        $stmt->bind_param("ssssddss", $name, $hours, $description, $address, $latitude, $longitude, $photo, $video);
         $stmt->execute();
         header("Location: home.php");
     }

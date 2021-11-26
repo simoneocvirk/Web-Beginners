@@ -12,31 +12,24 @@ session_start();
   	<meta charset="utf-8">	
  	<link rel="stylesheet" href="GenericFormat.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-	<script src="js/individual_sample.js"></script>
- 	<!-- <script src="js/OpenLayers-2.13.1/OpenLayers.js"></script> -->
-    <script>
+    <script src="js/individual_sample.js"></script>
+    <!--The following is for Leaflet living map-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+<script>
         function addmarkers() {
-            var lats = "<?php
-            foreach ($_SESSION["search_results"] as $row) {
-                echo $row["latitude"] . " ";
-            }
-            ?>".split(" ");
-            var lons = "<?php
-            foreach ($_SESSION["search_results"] as $row) {
-                echo $row["longitude"] . " ";
-            }
-            ?>".split(" ");
-            var names = "<?php
-            foreach ($_SESSION["search_results"] as $row) {
-                echo $row["name"] . "~~~~";
-            }
-            ?>".split("~~~~");
-            lats.pop();
-            lons.pop();
-            names.pop();
-            for (let i = 0; i < lats.length; i++) {
-                addMarker(lats[i], lons[i], names[i]);
-            }
+            var lat = <?php
+                echo $_SESSION["search_results"][intval($_POST["placeid"])]["latitude"];
+            ?>;
+            var lon = <?php
+                echo $_SESSION["search_results"][intval($_POST["placeid"])]["longitude"]; 
+            ?>;
+            var name = "<?php
+                echo $_SESSION["search_results"][intval($_POST["placeid"])]["name"];
+            ?>";
+            addMarker(lat, lon, name);        
         }
     </script>
 	<!-- meta data for add on task 1, works for both facebook and twitter -->
@@ -51,7 +44,7 @@ session_start();
 	<title>Web Beginners</title>
 </head>
 
-<body class="bg" style="color: white" onload="loadmap()">
+<body class="bg" style="color: white" onload="loadmap(); addmarkers();">
 	<div class="header">
 	<div class="name">
 		<a href="index.php">WEB BEGINNERS</a>

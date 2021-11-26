@@ -45,9 +45,11 @@ if (isset($_SESSION["valid"])) {
 	<h2 class="animate__animated animate__backInDown">TO ADD A NEW OBJECT FILL OUT THE FORM BELOW</h2>
 		<form method="post" action="submission_action.php" enctype="multipart/form-data">	
 				<!--Text bar for entering location's name-->
-				<label><br><input type="text" name="name" placeholder="Name" style="width: 30%"><br></label>
+                <label><br><input type="text" name="name" placeholder="Name" style="width: 30%"><br></label>
+                <!--Hours-->
+                <label><br><textarea name="hours" placeholder="Hours of Operation" cols="50" rows="7" style="font-family: arial;"></textarea><br></label>
 				<!--Description text bar-->
-				<label><br><textarea name="description" placeholder="Description" ols="100" rows="10" style="font-family: arial;"></textarea><br></label>
+				<label><br><textarea name="description" placeholder="Description" cols="100" rows="10" style="font-family: arial;"></textarea><br></label>
 				<!-- edited in part 2 -->
 				<label><br><input id="address" type="text" name="address" placeholder="Address" style="width: 60%"><br></label>
 				<!-- button to trigger Geolocation API -->

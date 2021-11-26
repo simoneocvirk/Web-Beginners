@@ -48,9 +48,6 @@ function addmarkers() {
         addMarker(lats[i], lons[i], names[i]);
     }
 }
-function getName(id) {
-
-}
 </script>
 
 <title>Web Beginners</title>
@@ -124,8 +121,8 @@ function getName(id) {
                             <td><?php echo $row["address"]; ?></td>
                         </tr>
                         <tr>
-                            <th>Info</th>
-                            <td><?php echo $row["description"]; ?></td>
+                            <th>Hours</th>
+                            <td><?php echo $row["hours"]; ?></td>
                         </tr>
                         <tr>
                             <th>Rating</th>
