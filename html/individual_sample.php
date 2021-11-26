@@ -74,34 +74,36 @@ session_start();
 	<div class="row" style="min-height: 65vh;" itemprop="itemReviewed" itemscope itemtype="https://schema.org/Restaurant">		
 		<a href="results_sample.php" style="text-decoration: none"><i class="arrow left arrowh"></i></a>
 		<!-- animation 9/10 -->
-        <h2 class="col-12 animate__animated animate__backInDown" itemprop="name"><?php echo $_SESSION["search_results"][intval($_POST["placeid"])]["name"] ?></h2> 
+        <h1 class="col-12 animate__animated animate__backInDown" itemprop="name"><?php echo $_SESSION["search_results"][intval($_POST["placeid"])]["name"] ?></h1> 
         <br>
         <p><?php echo $_SESSION["search_results"][intval($_POST["placeid"])]["description"] ?></p>
 		<br>	
-
         <div id="map"></div>
-		<!-- added in part 2 -->
-		<center><div id="basicMap" style="width: 60%; height: 20vw;"></div></center>
-		<div style="height: 20%; width: 100%;"></div>
-		<br>
-			<div class="photo">
-				<picture>
-					<!-- the image is 475 pixels in width -->
-					<source media="(min-width: 475px)"
-						srcset="src/Bridges2x.png"/>
-					<source media="(max-width: 474px)"
-						srcset="src/Bridges1x.png"/>
-					<img itemprop="image" src="src/Bridges1x.png" alt=""/>
-				</picture>
-			</div>
-		<br>
-
-		<!-- Video -->
-		<video src="src/Video.mp4" style="width: 80%; height: 40%" controls></video>
-		<p></p>
-	</div>
+        <!-- added in part 2 -->
+        <?php
+            if (!empty($_SESSION["search_results"][intval($_POST["placeid"])]["picsrc"])) {
+                ?>
+                <br>
+                <div class="photo">
+                    <picture>
+                        <img style="width: 80%" src=<?php echo "\"" . $_SESSION["search_results"][intval($_POST["placeid"])]["picsrc"] . "\"" ?> alt=""/>
+                    </picture>
+                </div>
+                <br>
+                <?php
+            }
+            if (!empty($_SESSION["search_results"][intval($_POST["placeid"])]["vidsrc"])) {
+                ?>
+                <br>
+                <video style="width: 60%" src=<?php echo "\"" . $_SESSION["search_results"][intval($_POST["placeid"])]["vidsrc"] . "\"" ?> alt="" controls></video>
+                <br>
+                <?php
+            } 
+        ?>
 		<!--Start of the table, using another table class tableIn-->
-		<!--Microdata for reviews-->
+        <!--Microdata for reviews-->
+        <br>
+        <br>
 		<table class="tableIn">
 			<tr>
 				<td class="td" itemprop="author">Lema A</td>

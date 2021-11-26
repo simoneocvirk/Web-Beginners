@@ -72,7 +72,7 @@ session_start();
     	
     	<br>
         <form class="search" method="post" action="search_action.php"> 
-    		<input type="search" id="search" name="search" placeholder="Ex: vegan" class="searchTerm"> <br>
+    		<input type="search" id="search" name="search" placeholder="Ex: centro" class="searchTerm"> <br>
     		<!--link to another page by sumbit button-->
             <input type="submit" value="Submit" class="searchButton">
         </form>    
