@@ -92,7 +92,7 @@ function addmarkers() {
                 ?>
                 <div class="centreResults">
                 <div class="col-6 list">
-<form name="<?php echo "name" . strval($i) ?>" method="post" action="individual_sample.php">
+<form name="<?php echo "name" . strval($i) ?>" method="post" action="individual_sample_action.php">
 <input type="hidden" name="placeid" value=<?php echo "\"" . strval($i - 1) . "\"" ?>>
                 <div onclick="document.forms['<?php echo "name" . strval($i) ?>'].submit();" style="color: white">
 </form>
