@@ -2,9 +2,21 @@
     include('/home/ubuntu/mysql_auth.php');
     require 'vendor/autoload.php';
     $name = $_POST["name"];
+    if (empty($name)) {
+        $name = NULL;
+    }    
     $hours = $_POST["hours"];
+    if (empty($hours)) {
+        $hours = NULL;
+    }
     $description = $_POST["description"];
+    if (empty($description)) {
+        $description = NULL;
+    }
     $address = $_POST["address"];
+    if (empty($address)) {
+        $address = NULL;
+    }
     $latitude = $_POST["lat"];
     $longitude = $_POST["long"];
     $photo = $_FILES["pic"]["tmp_name"];

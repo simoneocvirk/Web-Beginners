@@ -71,7 +71,7 @@ session_start();
     	<h2 class="center">Search it up by the names!</h2>
     	
     	<br>
-        <form class="search" method="post" action="search_action.php"> 
+        <form class="search" method="post" action="search_word.php"> 
     		<input type="search" id="search" name="search" placeholder="Ex: centro" class="searchTerm"> <br>
     		<!--link to another page by sumbit button-->
             <input type="submit" value="Submit" class="searchButton">
@@ -81,19 +81,19 @@ session_start();
 
   	<!-- Start of the second search panel -->
 		<div class="col-6 center" style="padding: 30px;" >
-			<h2>Or...search it up by ratings!</h2>
-				<select name="rating" >
-					<optgroup label="">
+            <h2>Or...search it up by ratings!</h2>
+                <form method="post" action="search_rating.php">
+				    <select name="rating">
 						<option value="*" disabled selected>Please select...</option>
 						<option value="5">5 star rating</option>
 						<option value="4">4 star rating</option>
 						<option value="3">3 star rating</option>
 						<option value="2">2 star rating</option>
 						<option value="1">1 star rating</option>
-					</optgroup>
 					</select> <br>
 				<!--link to another page by sumbit button-->
-					<input type="submit" onclick="location.href='results_sample.php';" value="Submit" class="searchButton"/>
+                    <input type="submit" value="Submit" class="searchButton"/>
+                </form>
 		</div>
 	</div>
 <hr>

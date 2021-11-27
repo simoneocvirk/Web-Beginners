@@ -106,29 +106,49 @@ $placeidx = intval($_SESSION["placeid"]);
         <!--Microdata for reviews-->
         <br>
         <br>
-		<table class="tableIn">
-			<tr>
-				<td class="td" itemprop="author">Lema A</td>
-				<td class="td" itemprop="ratingValue">5 Stars</td>
-				<td class="td" itemprop="reviewBody">Great vegetarian food and atmosphere is perfect for
-					<br>studying and reading (during the quiet times).</td>
-			</tr>
-			<tr>
-				<td class="td" itemprop="author">Sherry Chen</td>
-				<td class="td" itemprop="ratingValue">5 Stars</td>
-				<td class="td" itemprop="reviewBody">I didn't expect vegan food to be so hearty. The food was
-					<br>excellent, and the people were very nice. I also liked
-					<br>the atmosphere, which was perfect for group study.</td>	
-			</tr>
-			<tr>
-				<td class="td" itemprop="author">Talia Tis</td>
-				<td class="td" itemprop="ratingValue">4 Stars</td>
-				<td class="td" itemprop="reviewBody">Consistently good vegetarian food, lots of seating and
-					<br>a wide selection. Except for the samosa which shouldn't
-					<br>even be called a samosa. It's so weirdly spiced and
-					<br>just wrong</td>
-			</tr>
-		</table>
+        <table class="tableIn">
+            <?php
+                if (!empty($_SESSION["review_results"])) {
+                    foreach ($_SESSION["review_results"] as $row) {
+                        ?>
+                        <tr>
+                            <td class="td" itemprop="author"><?php echo $row["name"]; ?></td>
+                            <td class="td" itemprop="ratingValue"><?php echo $row["rating"] . " Stars"; ?></td>
+                            <td class="td" itemprop="reviewBody"><?php echo $row["comment"]; ?></td>
+                        </tr>
+                        <?php
+                    }    
+                }
+                if (isset($_SESSION["valid"])) {
+                    if ($_SESSION["valid"] == '1') {
+                        ?>
+                            <form method="post" action="individual_sample_review.php" enctype="multipart/form-data">
+                                    <tr>
+                                        <td class="td"><label><textarea name="name" placeholder="Name" style="font-family: arial; width: 100%"></textarea></label></td>
+                                        <td class="td"><label><select name="rating" style="font-family: arial; width: 100%; border-color: white;">
+						                                        <option value="*" disabled selected>Please Select</option>
+						                                        <option value="5">5 Stars</option>
+						                                        <option value="4">4 Stars</option>
+						                                        <option value="3">3 Stars</option>
+						                                        <option value="2">2 Stars</option>
+						                                        <option value="1">1 Star</option>
+					                    </select></label></td>
+                                        <td class="td"><textarea name="comment" placeholder="Comment" style="font-family: arial; width: 100%"></textarea></td>
+                                    </tr>
+                                </table>
+                                <br>
+                                <label><input type="submit"></label>
+                            </form>
+                            <?php
+                    }
+                } else {
+                    ?>
+                    </table>
+                    <?php
+                }
+            ?>
+        <br>
+        <br>
 </div>
 <hr>
 	<div class="footer">

@@ -13,7 +13,8 @@
     } else {
         $_SESSION["placeid"] = $_GET["idx"];
     }
-    $location = $_SESSION["search_results"][intval($placeidx)]["name"];
+    $placeidx = intval($_SESSION["placeid"]);    
+    $location = $_SESSION["search_results"][$placeidx]["name"];
     $conn = new mysqli($servername, $dbusername, $dbpassword, $database);
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);

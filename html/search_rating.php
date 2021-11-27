@@ -2,15 +2,14 @@
     session_start();
     require 'vendor/autoload.php';
     include('/home/ubuntu/mysql_auth.php');
-    $search = $_POST["search"];
-    //$rating = $_POST["rating"];
+    $rating = $_POST["rating"];
     $servername = "localhost";
     $database = "cs4ww3project";
     $conn = new mysqli($servername, $dbusername, $dbpassword, $database);
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     } else {
-        $sql = sprintf("SELECT * FROM places WHERE name LIKE CONCAT('%%', CONCAT(LOWER('%s'), '%%'))", $search);
+        $sql = sprintf("SELECT * FROM places RIGHT JOIN (SELECT DISTINCT place, ROUND(AVG(rating)) as rate FROM reviews GROUP BY place) review ON places.name = review.place WHERE review.rate = '%d'", $rating);
         $results = $conn->query($sql);
         if (!$results) {
             die('Invalid query: ' . $conn->error);

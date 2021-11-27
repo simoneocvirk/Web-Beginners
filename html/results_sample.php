@@ -126,7 +126,7 @@ function addmarkers() {
                         </tr>
                         <tr>
                             <th>Rating</th>
-                            <td>Average Rating</td>
+                            <td><?php echo $row["rate"]; ?></td>
                         </tr>
                     </table>
                 </div>
