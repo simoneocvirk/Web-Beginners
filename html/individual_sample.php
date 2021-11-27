@@ -2,12 +2,7 @@
 
 session_start();
 
-$placeidx = NULL;
-if (isset($_GET["idx"])) {
-    $placeidx = intval($_GET["idx"]);
-} else {
-    $placeidx = intval($_POST["placeid"]);
-}
+$placeidx = intval($_SESSION["placeid"]);
 
 ?>
 <!DOCTYPE html>

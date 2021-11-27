@@ -15,6 +15,6 @@ mymap = L.map('map').setView([43.2630393069811, -79.91921269041875], 15);
 
 function addMarker(lat, lon, name, idx) {
 	var marker = L.marker([lat, lon])
-			.bindPopup("Here is " + name + "<br>" + "<a href='individual_sample.php?idx=" + idx.toString() + "'>For more information</a>")
+			.bindPopup("Here is " + name + "<br>" + "<a href='individual_sample_action.php?idx=" + idx.toString() + "'>For more information</a>")
 			.addTo(mymap);
 } 
