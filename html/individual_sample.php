@@ -125,7 +125,7 @@ $placeidx = intval($_SESSION["placeid"]);
                             <form method="post" action="individual_sample_review.php" enctype="multipart/form-data">
                                     <tr>
                                         <td class="td"><label><textarea name="name" placeholder="Name" style="font-family: arial; width: 100%"></textarea></label></td>
-                                        <td class="td"><label><select name="rating" style="font-family: arial; width: 100%; border-color: white;">
+                                        <td class="td"><label><select name="rating" style="font-family: arial; width: 100%; border-color: white;"> <!-- I LOOK WRONG -->
 						                                        <option value="*" disabled selected>Please Select</option>
 						                                        <option value="5">5 Stars</option>
 						                                        <option value="4">4 Stars</option>
