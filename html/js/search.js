@@ -9,6 +9,8 @@ function getLocation() {
 }
 
 function showPosition(position) {
+	document.getElementById("lat").value = position.coords.latitude.toString();
+	document.getElementById("lon").value = position.coords.longitude.toString();
 	window.alert("latitude: " + position.coords.latitude + "\nlongitude: " + position.coords.longitude)
 }
 

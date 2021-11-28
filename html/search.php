@@ -61,7 +61,19 @@ session_start();
 
 	<!--Using geolocation API get user's location-->
 	<!-- animation 3/10 -->
-	<button onclick="getLocation();location.href='results_sample.php';" class="searchLocation">Get your location and search near you!!</button>
+    <form action="search_location.php">
+        <!-- button to trigger Geolocation API -->
+        <br><button type="button" onclick="getLocation();">Get Latitude and Longitude</button>
+		<!-- Create two blocks for two text bar on the same row-->
+		<div class="row">
+		    <div class="col-12">
+			    <!-- edited in part 2 -->
+				<label><input id="lat" name="lat" type="text" placeholder="Latitude" size="30" class=""></label>	
+				<label class="latlon"><input id="lon" name="lon" type="text" placeholder="Longitude" size="30" class=""></label>
+			</div>
+		</div>
+        <button type="submit" class="searchLocation">Get your location and search near you!!</button>
+    </form>
 </div>
 	<hr>
 
