@@ -174,8 +174,12 @@ img {
           margin: 20px;
           font-size: 10px;
           outline: none;
-
           }
+
+	/*Fix the display error in tables*/
+	.tableIn select {
+	  margin: 0; 
+	}
 
      .search {
          width: 100%;
