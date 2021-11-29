@@ -2,6 +2,7 @@
     session_start();
     require 'vendor/autoload.php';
     include('/home/ubuntu/mysql_auth.php');
+    include('/home/ubuntu/s3_auth.php');
     $place = $_POST["place"];
     $name = $_POST["name"];
     $rating = $_POST["rating"];
@@ -29,8 +30,8 @@
             'region'  => 'ca-central-1',
             'version' => 'latest',
             'credentials' => [
-                'key'    => "AKIA3UP3PBQ3ZC2JKQFK",
-                'secret' => "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",
+                'key'    => $access,
+                'secret' => $secret,
             ]
         ]);
         header("Location: individual_sample.php");
