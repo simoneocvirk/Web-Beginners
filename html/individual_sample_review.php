@@ -4,17 +4,10 @@
     $placeidx = intval($_SESSION["placeid"]);
     $place = $_SESSION["search_results"][$placeidx]["name"]; 
     $name = $_POST["name"];
-    if (empty($name)) {
-        $name = NULL;
-    }
+    
     $rating = $_POST["rating"];
-    if (empty($rating)) {
-        $rating = NULL;
-    }     
-    $comment = $_POST["comment"];
-    if (empty($comment)) {
-        $comment = NULL;
-    }   
+   
+    $comment = $_POST["comment"]   
     $servername = "localhost";
     $database = "cs4ww3project";
     $conn = new mysqli($servername, $dbusername, $dbpassword, $database);
