@@ -122,7 +122,7 @@ $placeidx = intval($_SESSION["placeid"]);
                 if (isset($_SESSION["valid"])) {
                     if ($_SESSION["valid"] == '1') {
                         ?>
-                            <form method="post" action="individual_sample_review.php" enctype="multipart/form-data">
+                            <form id="subForm" method="post" enctype="multipart/form-data">
                                     <tr>
                                         <td class="td"><label><textarea name="name" placeholder="Name" style="font-family: arial; width: 100%"></textarea></label></td>
                                         <td class="td"><label><select name="rating" style="font-family: arial; width: 100%; border-color: white;"> <!-- I LOOK WRONG -->
@@ -138,6 +138,7 @@ $placeidx = intval($_SESSION["placeid"]);
                                 </table>
                                 <br>
                                 <label><input type="submit"></label>
+				<span id="msg"></span>
                             </form>
                             <?php
                     }
@@ -150,6 +151,35 @@ $placeidx = intval($_SESSION["placeid"]);
         <br>
         <br>
 </div>
+<script>
+$(document).ready(function(){
+	$("#subForm").submit(function(e) {
+      e.preventDefault();
+	
+		var name = $('#name').val();
+		var rating = $('#rating').val();
+		var comment = $('#comment').val();
+		if(name!="" && rating!="" && comment!=""){
+			$.ajax({
+				url: "individual_sample_review.php",
+				type: "POST",
+				data:$(this).serialize(),
+				cache: false,
+				success: function(dataResult){
+					alert('Successfully called');
+						$('#msg').html('Data added successfully !'); 
+						$('#subForm').trigger("reset");
+					}
+				
+			});
+			
+		}
+		else{
+			alert('Please fill all the field !');
+		}
+	});
+});
+</script>
 <hr>
 	<div class="footer">
         <p>Made by Simone Ocvirk and Yiqi Huang</p>
