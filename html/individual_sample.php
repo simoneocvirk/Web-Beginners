@@ -20,7 +20,10 @@ $placeidx = intval($_SESSION["placeid"]);
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
         crossorigin=""/>
    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+<!--Library of Ajax-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <script>
         function addmarkers() {
             var lat = <?php
@@ -152,14 +155,16 @@ $placeidx = intval($_SESSION["placeid"]);
         <br>
         <br>
 </div>
+
+<!--Using jQuery to do Ajax-->
 <script>
 $(document).ready(function(){
 	$("#subForm").submit(function(e) {
       e.preventDefault();
-	
 		var name = $('#name').val();
 		var rating = $('#rating').val();
 		var comment = $('#comment').val();
+		// Making sure the user fills in every input field
 		if(name!="" && rating!="" && comment!=""){
 			$.ajax({
 				url: "individual_sample_review.php",
@@ -167,16 +172,14 @@ $(document).ready(function(){
 				data:$(this).serialize(),
 				cache: false,
 				success: function(dataResult){
-					alert('Successfully called');
-						$('#msg').html('Data added successfully !'); 
+						$('#msg').html('Thank you for your comment!');
+						// Clear the input field.	 
 						$('#subForm').trigger("reset");
 					}
-				
 			});
-			
 		}
 		else{
-			alert('Please fill all the field !');
+			$('#msg').html('Please fill in every blank before submit.'); 
 		}
 	});
 });
