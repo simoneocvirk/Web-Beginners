@@ -45,11 +45,12 @@ if (isset($_SESSION["valid"])) {
 	<h2 class="animate__animated animate__backInDown">TO ADD A NEW OBJECT FILL OUT THE FORM BELOW</h2>
 		<form method="post" action="submission_action.php" enctype="multipart/form-data">	
 				<!--Text bar for entering location's name-->
-                <label><br><input type="text" name="name" placeholder="Name" style="width: 30%" pattern=".{,15}" title="Please enter 15 or less characters" ><br></label>
+                <label><br><input type="text" name="name" placeholder="Name" style="width: 30%" pattern=".{1,15}" title="Please enter 15 or less characters" ><br></label>
                 <!--Hours-->
                 <label><br><textarea name="hours" placeholder="Hours of Operation" cols="50" rows="7" style="font-family: arial;"></textarea><br></label>
 				<!--Description text bar-->
-				<label><br><textarea name="description" placeholder="Description" cols="100" rows="10" style="font-family: arial;" pattern=".{30,}" title="Please enter at least 30 or more characters"></textarea><br></label>
+				<!--textarea not support pattern attribute for doing validation -->
+				<label><br><textarea name="description" placeholder="Description" cols="100" rows="10" style="font-family: arial;" ></textarea><br></label>
 				<!-- edited in part 2 -->
 				<label><br><input id="address" type="text" name="address" placeholder="Address" style="width: 60%"><br></label>
 				<!-- button to trigger Geolocation API -->
