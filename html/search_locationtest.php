@@ -20,7 +20,7 @@
             echo $sql;
             $results = $conn->prepare($sql);
             $results->execute();
-            $_SESSION["search_results"] = $results->fetchAll(MYSQLI_ASSOC);
+            $_SESSION["search_results"] = $results->fetchAll();
             $s3 = new Aws\S3\S3Client([
                 'region'  => 'ca-central-1',
                 'version' => 'latest',
