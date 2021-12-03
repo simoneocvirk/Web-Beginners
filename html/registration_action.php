@@ -1,5 +1,7 @@
 <?php
-    include('/home/ubuntu/mysql_auth.php');
+//Insert registered user data into database
+
+    include('PDO_connect.php');
     $firstName = $_POST["firstname"];
     $lastName = $_POST["lastname"];
     $email = $_POST["email"];
@@ -9,16 +11,19 @@
     if (strcmp("No, thanks", $_POST["infoPush"]) == 0) {
         $emailList = 0;
     }
-    $servername = "localhost";
-    $database = "cs4ww3project";
-    $conn = new mysqli($servername, $dbusername, $dbpassword, $database);
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    } else {
-        $sql = "INSERT INTO users (firstName, lastName, email, password, gender, emailList) VALUES (?,?,?,?,?,?)";
+    
+
+     $sql = "INSERT INTO users (firstName, lastName, email, password, gender, emailList) VALUES (:firstName,:lastName,:email,:password,:gender,:emailList)";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sssssi", $firstName, $lastName, $email, $password, $gender, $emailList);
+
+        $stmt->bindParam(':firstName', $firstName);
+        $stmt->bindParam(':lastName', $lastName);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':password', $password);
+        $stmt->bindParam(':gender', $gender);
+        $stmt->bindParam(':emailList', $emailList);
         $stmt->execute();
-        header("Location: index.php");
-    }
+
+        $conn = null;
+	header("Location: index.php");    
 ?>
