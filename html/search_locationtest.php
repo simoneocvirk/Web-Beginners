@@ -1,5 +1,5 @@
 <?php
-// Query database for searching by location's name
+// Query database for searching by location's latitude and longitude
 
     session_start();
     require 'vendor/autoload.php';
