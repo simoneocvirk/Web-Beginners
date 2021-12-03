@@ -1,7 +1,7 @@
 <?php
 //Insert registered user data into database
 
-    include('PDO_connection.php');
+    include('PDO_connect.php');
     $firstName = $_POST["firstname"];
     $lastName = $_POST["lastname"];
     $email = $_POST["email"];
