@@ -22,7 +22,7 @@
             if (!$results) {
                 die('Invalid query: ' . $conn->error);
             }
-            $_SESSION["search_results"] = $results->fetch_all(MYSQLI_ASSOC);
+            $_SESSION["search_results"] = $results->fetchAll(MYSQLI_ASSOC);
             $s3 = new Aws\S3\S3Client([
                 'region'  => 'ca-central-1',
                 'version' => 'latest',
