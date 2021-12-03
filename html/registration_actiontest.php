@@ -25,5 +25,5 @@
         $stmt->execute();
 
         $conn = null;
-    
+	header("Location: index.php");    
 ?>
