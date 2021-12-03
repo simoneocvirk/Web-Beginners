@@ -61,7 +61,7 @@ session_start();
 
 	<!--Using geolocation API get user's location-->
 	<!-- animation 3/10 -->
-    <form action="search_location.php">
+    <form action="search_locationtest.php">
         <!-- button to trigger Geolocation API -->
         <br><button type="button" onclick="getLocation();">Get Latitude and Longitude</button>
 		<!-- Create two blocks for two text bar on the same row-->
