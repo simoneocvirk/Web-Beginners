@@ -5,7 +5,7 @@
     $password = $_POST["pass"];
     
         $sql = sprintf("SELECT * FROM users WHERE email='%s' AND password='%s'", $email, $password);
-        $result = $conn->query($sql)->fetch();
+        $result = $conn->query($sql);
        
         if ($result->rowCount() == 1) {
             $_SESSION["valid"] = '1';
