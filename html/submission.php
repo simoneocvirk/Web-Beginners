@@ -52,7 +52,7 @@ if (isset($_SESSION["valid"])) {
 				<!--textarea not support pattern attribute for doing validation -->
 				<label><br><textarea name="description" placeholder="Description" cols="100" rows="10" style="font-family: arial;" ></textarea><br></label>
 				<!-- edited in part 2 -->
-				<label><br><input id="address" type="text" name="address" placeholder="Address" style="width: 60%"><br></label>
+				<label><br><input id="address" type="text" name="address" placeholder="Address" style="width: 60%" pattern="[A-Za-z0-9]+" title="Please enter a valid google map address"><br></label>
 				<!-- button to trigger Geolocation API -->
 				<br><button type="button" onclick="getLatLon()">Get Latitude and Longitude</button>
 				<!--Create two blocks for two text bar on the same row-->
