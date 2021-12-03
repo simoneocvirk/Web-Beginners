@@ -47,14 +47,16 @@ if (isset($_SESSION["valid"])) {
 				<!--Text bar for entering location's name-->
                 <label><br><input type="text" name="name" placeholder="Name" style="width: 30%" pattern=".{1,15}" title="Please enter 15 or less characters" ><br></label>
                 <!--Hours-->
+		<!--textarea not support pattern attribute for doing validation -->
                 <label><br><textarea name="hours" placeholder="Hours of Operation" cols="50" rows="7" style="font-family: arial;"></textarea><br></label>
-				<!--Description text bar-->
-				<!--textarea not support pattern attribute for doing validation -->
-				<label><br><textarea name="description" placeholder="Description" cols="100" rows="10" style="font-family: arial;" ></textarea><br></label>
-				<!-- edited in part 2 -->
-				<label><br><input id="address" type="text" name="address" placeholder="Address" style="width: 60%" pattern="[A-Za-z0-9]+" title="Please enter a valid google map address"><br></label>
-				<!-- button to trigger Geolocation API -->
-				<br><button type="button" onclick="getLatLon()">Get Latitude and Longitude</button>
+		<!--Description text bar-->				
+		<!--textarea not support pattern attribute for doing validation -->
+		<label><br><textarea name="description" placeholder="Description" cols="100" rows="10" style="font-family: arial;" ></textarea><br></label>
+		<!-- edited in part 2 -->
+		<!--Validate the address using Google map address format-->
+		<label><br><input id="address" type="text" name="address" placeholder="Address" style="width: 60%" pattern="[A-Za-z0-9].*[,] [A-Za-z].*[,] [O][N] [A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]" title="Please enter a valid Ontario address from Google Map. EX: 1280 Main St W, Hamilton, ON L8S 4L8"><br></label>
+		<!-- button to trigger Geolocation API -->
+		<br><button type="button" onclick="getLatLon()">Get Latitude and Longitude</button>
 				<!--Create two blocks for two text bar on the same row-->
 				<div class="row">
 					<div class="col-12">
