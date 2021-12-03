@@ -167,7 +167,7 @@ $(document).ready(function(){
 		// Making sure the user fills in every input field
 		if(name!="" && rating!="" && comment!=""){
 			$.ajax({
-				url: "individual_sample_review.php",
+				url: "individual_sample_reviewtest.php",
 				type: "POST",
 				data:$(this).serialize(),
 				cache: false,
