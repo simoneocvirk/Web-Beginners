@@ -4,7 +4,9 @@
     session_start();
     require 'vendor/autoload.php';
     include('PDO_connect.php');
+    // include s3 username and password
     include('/home/ubuntu/s3_auth.php');
+    // get values from page
     $place = $_POST["place"];
     $name = $_POST["name"];
     $rating = $_POST["rating"];
@@ -17,11 +19,13 @@
     }
     $placeidx = intval($_SESSION["placeid"]);    
     $location = $_SESSION["search_results"][$placeidx]["name"];
-    
+
+        // sql query for reviews for place
         $sql = sprintf("SELECT * FROM reviews WHERE place LIKE CONCAT('%%', CONCAT(LOWER('%s'), '%%'))", $location);
         $results = $conn->prepare($sql);
         $results->execute();
         $_SESSION["review_results"] = $results->fetchAll();
+        // connect to s3
         $s3 = new Aws\S3\S3Client([
             'region'  => 'ca-central-1',
             'version' => 'latest',

@@ -1,3 +1,4 @@
+<!-- set up php for file -->
 <?php
 // Query database for searching by location's latitude and longitude
 
@@ -5,6 +6,7 @@
     require 'vendor/autoload.php';
     include('PDO_connect.php');
     include('/home/ubuntu/s3_auth.php');
+    // get values from page
     $latitude = $_GET["myLat"];
     $longitude = $_GET["myLon"];
     echo $latitude;
@@ -15,12 +17,14 @@
         $longitude = NULL;
         $_SESSION["search_results"] = NULL;
     } else {
-        
+
+            // sql query for info about locations and calculation of lat lon coordinate distance
             $sql = sprintf("SELECT * FROM places p1 LEFT JOIN (SELECT DISTINCT place, ROUND(AVG(rating)) as rate FROM reviews GROUP BY place) review ON p1.name = review.place LEFT JOIN (SELECT name, SQRT(POWER(p2.latitude - %f, 2) + POWER(p2.longitude - %f, 2)) as distance FROM places p2) far ON p1.name = far.name WHERE distance<= ALL (SELECT distance FROM places p3 LEFT JOIN (SELECT DISTINCT place, ROUND(AVG(rating)) as rate FROM reviews GROUP BY place) review ON p3.name = review.place LEFT JOIN (SELECT name, SQRT(POWER(p4.latitude - %f, 2) + POWER(p4.longitude - %f, 2)) as distance FROM places p4) far ON p3.name = far.name)", $latitude, $longitude, $latitude, $longitude);
             echo $sql;
             $results = $conn->prepare($sql);
             $results->execute();
             $_SESSION["search_results"] = $results->fetchAll();
+            // connect to S3 to store pictues and videos
             $s3 = new Aws\S3\S3Client([
                 'region'  => 'ca-central-1',
                 'version' => 'latest',
@@ -30,6 +34,7 @@
                 ]
             ]);
             $i = 0;
+            // add pictures and videos to S3
             foreach ($_SESSION["search_results"] as $row) {
                 $picture_src = NULL;
                 if ($row["photo"] != NULL) {

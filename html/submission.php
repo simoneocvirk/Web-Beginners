@@ -1,7 +1,9 @@
+<!-- set up php for file -->
 <?php
 
 session_start();
 
+// if not logged in, redirect to login page 
 if (isset($_SESSION["valid"])) {
     if ($_SESSION["valid"] != '1') {
         header("Location: login.php");

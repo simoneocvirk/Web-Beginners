@@ -1,3 +1,4 @@
+<!-- set up php for file -->
 <?php
 
 session_start();
@@ -25,6 +26,7 @@ $placeidx = intval($_SESSION["placeid"]);
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
+        // add markers to the to the map
         function addmarkers() {
             var lat = <?php
                 echo $_SESSION["search_results"][intval($placeidx)]["latitude"];
@@ -58,7 +60,8 @@ $placeidx = intval($_SESSION["placeid"]);
   
   	<div class="header-right">
       <a href="search.php" class="button buttonh">Search</a>
-      <a href="submission.php" class="button buttonh">Submission</a>
+      <a href="submission.php" class="button buttonh">Submission</a>i
+      <!-- update buttons depending on login state -->
       <?php
         if (isset($_SESSION["valid"])) {
             if ($_SESSION["valid"] == '1') {
@@ -85,7 +88,8 @@ $placeidx = intval($_SESSION["placeid"]);
         <p><?php echo $_SESSION["search_results"][intval($placeidx)]["description"] ?></p>
 		<br>	
         <div id="map"></div>
-        <!-- added in part 2 -->
+        <!-- added in part 3 -->
+        <!-- show whichever location was selected -->
         <?php
             if (!empty($_SESSION["search_results"][intval($placeidx)]["picsrc"])) {
                 ?>
@@ -123,13 +127,14 @@ $placeidx = intval($_SESSION["placeid"]);
                         <?php
                     }    
                 }
+                // if logged in, allow to add a revew
                 if (isset($_SESSION["valid"])) {
                     if ($_SESSION["valid"] == '1') {
                         ?>
                             <form id="subForm" method="post" enctype="multipart/form-data">
                                     <tr>
                                         <td class="td"><label><textarea name="name" placeholder="Name" style="font-family: arial; width: 100%"></textarea></label></td>
-                                        <td class="td"><label><select name="rating" style="font-family: arial; width: 100%; border-color: white;"> <!-- I LOOK WRONG -->
+                                        <td class="td"><label><select name="rating" style="font-family: arial; width: 100%; border-color: white;"> 
 						                                        <option value="*" disabled selected>Please Select</option>
 						                                        <option value="5">5 Stars</option>
 						                                        <option value="4">4 Stars</option>

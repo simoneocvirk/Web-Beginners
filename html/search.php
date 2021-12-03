@@ -1,3 +1,4 @@
+<!-- set up php for file -->
 <?php
 
 session_start();
@@ -40,6 +41,7 @@ session_start();
 	<!-- buttons for header -->
       <a href="search.php" class="button buttonh">Search</a>
       <a href="submission.php" class="button buttonh">Submission</a>
+      <!-- change header based on login state -->
       <?php
         if (isset($_SESSION["valid"])) {
             if ($_SESSION["valid"] == '1') {

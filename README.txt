@@ -1,7 +1,7 @@
 Simone Ocvirk, ocvirks, 400232179
 Yiqi Huang, huany132, 400189575
 
-Website URL:	https://18.217.210.172/index.html 
+Website URL:	https://18.217.210.172 
 Github:		https://github.com/simoneocvirk/Web-Beginners.git 
 
 INFO FROM PART 1:

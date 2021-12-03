@@ -1,7 +1,8 @@
+<!-- set up php for file -->
 <?php
 
 session_start();
-
+// if logged in go to home if not go to login
 $is_session_valid = 0;
 if (isset($_SESSION['valid'])) {
     if (!empty($_SESSION['valid'])) {

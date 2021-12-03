@@ -1,7 +1,8 @@
-
+<!-- set up php for file -->
 <?php
     session_start();    
     include('PDO_connect.php');
+    // get values from the page file
     $placeidx = intval($_SESSION["placeid"]);
     $place = $_SESSION["search_results"][$placeidx]["name"]; 
     $name = $_POST["name"];
@@ -17,6 +18,7 @@
         $comment = NULL;
     }   
 
+    # sql query for reviews
     $sql = "INSERT INTO reviews (place, name, rating, comment) VALUES (:place,:name,:rating,:comment)";
     $stmt = $conn->prepare($sql);
     

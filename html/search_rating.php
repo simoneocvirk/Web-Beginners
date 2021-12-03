@@ -1,16 +1,20 @@
+<!-- set up php for file -->
 <?php
 // Query database for searching by location's rating
 
     session_start();
     require 'vendor/autoload.php';
     include('PDO_connect.php');
+    // include s3 username and password
     include('/home/ubuntu/s3_auth.php');
+    // get values from page
     $rating = $_POST["rating"];
-    
+        // sql query for places with searched rating
         $sql = sprintf("SELECT * FROM places RIGHT JOIN (SELECT DISTINCT place, ROUND(AVG(rating)) as rate FROM reviews GROUP BY place) review ON places.name = review.place WHERE review.rate = '%d'", $rating);
         $results = $conn->prepare($sql);
         $results->execute();
         $_SESSION["search_results"] = $results->fetchAll();
+        // connect to S3 for pictures and videos
         $s3 = new Aws\S3\S3Client([
             'region'  => 'ca-central-1',
             'version' => 'latest',
@@ -20,6 +24,7 @@
             ]
         ]);
         $i = 0;
+        // display pictures and videos
         foreach ($_SESSION["search_results"] as $row) {
             $picture_src = NULL;
             if ($row["photo"] != NULL) {

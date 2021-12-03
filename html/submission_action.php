@@ -1,9 +1,12 @@
+<!-- set up php for file -->
 <?php
 //Insert data of new place in database
 
     include('PDO_connect.php');
+    // include s3 username and password
     include('/home/ubuntu/s3_auth.php');
     require 'vendor/autoload.php';
+    // get values from page
     $name = $_POST["name"];
     if (empty($name)) {
         $name = NULL;
@@ -36,6 +39,7 @@
     if (empty($video)) {
         $video = NULL;
     }
+    // connect to s3
     $s3 = new Aws\S3\S3Client([
         'region'  => 'ca-central-1',
         'version' => 'latest',
@@ -58,7 +62,7 @@
             'SourceFile' => $video
         ]);
     }
-    
+        // sql query to insert new submission into places
         $sql = "INSERT INTO places (name, hours, description, address, latitude, longitude, photo, video) VALUES (:name,:hours,:description,:address,:latitude,:longitude,:photo,:video)";
         $stmt = $conn->prepare($sql);
         

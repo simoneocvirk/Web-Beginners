@@ -1,7 +1,8 @@
+<!-- set up php for file -->
 <?php
 
 session_start();
-
+// if already logged in go to log in page
 if (isset($_SESSION["valid"])) {
     if ($_SESSION["valid"] == '1') {
         header("Location: home.php");

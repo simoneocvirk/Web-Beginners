@@ -1,3 +1,4 @@
+<!-- set up php for file -->
 <?php
 
 session_start();
@@ -25,6 +26,7 @@ session_start();
 <script src="js/results_sample.js"></script>
 
 <script>
+// add markers to the map
 function addmarkers() {
     var lats = "<?php
     foreach ($_SESSION["search_results"] as $row) {
@@ -63,6 +65,7 @@ function addmarkers() {
 	<!-- setup -->
       <a href="search.php" class="button buttonh">Search</a>
       <a href="submission.php" class="button buttonh">Submission</a>
+       <!-- change buttons depending on login state -->
        <?php
         if (isset($_SESSION["valid"])) {
             if ($_SESSION["valid"] == '1') {
@@ -87,6 +90,7 @@ function addmarkers() {
     <?php
         if (isset($_SESSION["search_results"])) {
             $i = 0;
+            // for each place found from sql query in search, diplay the following data values
             foreach ($_SESSION["search_results"] as $row) { 
                 $i = $i + 1;
                 ?>

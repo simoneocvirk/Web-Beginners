@@ -1,7 +1,9 @@
+<!-- set up php for file -->
 <?php
 //Insert registered user data into database
 
     include('PDO_connect.php');
+    // get values from page
     $firstName = $_POST["firstname"];
     $lastName = $_POST["lastname"];
     $email = $_POST["email"];
@@ -12,7 +14,7 @@
         $emailList = 0;
     }
     
-
+     // sql query to add in new user
      $sql = "INSERT INTO users (firstName, lastName, email, password, gender, emailList) VALUES (:firstName,:lastName,:email,:password,:gender,:emailList)";
         $stmt = $conn->prepare($sql);
 

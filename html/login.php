@@ -1,3 +1,4 @@
+<!-- set up php for file -->
 <?php session_start(); ?>
 
 <!DOCTYPE html>
@@ -33,6 +34,7 @@
 	<!-- animation 2/10 -->
 	<h3 class="animate__animated animate__bounceInRight" style="text-align: center">You've come to the right place!</h3>
     <br>
+    <!-- notify user if credentials are incorrect -->
     <?php
         if(isset($_SESSION['status_message'])) {
             if(!empty($_SESSION['status_message'])) {

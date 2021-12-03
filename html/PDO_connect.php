@@ -1,7 +1,8 @@
+<!-- set up php for file -->
 <?php
+// include database username and password
+include('/home/ubuntu/mysql_auth.php');
 $servername = "localhost";
-$dbusername = "root";
-$dbpassword = "themidpass";
 $database = "cs4ww3project";
 try {
   $conn = new PDO("mysql:host=$servername;dbname=$database", $dbusername, $dbpassword);
