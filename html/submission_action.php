@@ -21,7 +21,13 @@
         $address = NULL;
     }
     $latitude = $_POST["lat"];
+    if (empty($latitude)) {
+	$latitude = NULL;
+    }
     $longitude = $_POST["long"];
+    if (empty($longitude)) {
+    	$longitude = NULL;
+    }
     $photo = $_FILES["pic"]["tmp_name"];
     if (empty($photo)) {
         $photo = NULL;
