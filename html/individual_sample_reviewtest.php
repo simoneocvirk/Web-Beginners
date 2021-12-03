@@ -13,8 +13,7 @@
 
     $sql = "INSERT INTO reviews (place, name, rating, comment) VALUES (:place,:name,:rating,:comment)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssis", $place, $name, $rating, $comment);
-
+    
     $stmt->bindParam(':place', $place);
     $stmt->bindParam(':name', $name);
     $stmt->bindParam(':rating', $rating);
