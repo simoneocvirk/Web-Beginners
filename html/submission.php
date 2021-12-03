@@ -43,7 +43,7 @@ if (isset($_SESSION["valid"])) {
 	<div class="center" style="min-height: 80vh;">
 	<!-- animation 4/10 -->
 	<h2 class="animate__animated animate__backInDown">TO ADD A NEW OBJECT FILL OUT THE FORM BELOW</h2>
-		<form method="post" action="submission_action.php" enctype="multipart/form-data">	
+		<form enctype="multipart/form-data">	
 				<!--Text bar for entering location's name-->
                 <label><br><input type="text" name="name" placeholder="Name" style="width: 30%" pattern=".{1,15}" title="Please enter 15 or less characters" ><br></label>
                 <!--Hours-->
