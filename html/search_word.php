@@ -1,21 +1,16 @@
 <?php
+// Query database for searching by location's name
+
     session_start();
     require 'vendor/autoload.php';
-    include('/home/ubuntu/mysql_auth.php');
+    include('PDO_connect.php');
     include('/home/ubuntu/s3_auth.php');
     $search = $_POST["search"];
-    $servername = "localhost";
-    $database = "cs4ww3project";
-    $conn = new mysqli($servername, $dbusername, $dbpassword, $database);
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    } else {
+    
         $sql = sprintf("SELECT * FROM places LEFT JOIN (SELECT DISTINCT place, ROUND(AVG(rating)) as rate FROM reviews GROUP BY place) review ON places.name = review.place WHERE name LIKE CONCAT('%%', CONCAT(LOWER('%s'), '%%'))", $search);
-        $results = $conn->query($sql);
-        if (!$results) {
-            die('Invalid query: ' . $conn->error);
-        }
-        $_SESSION["search_results"] = $results->fetch_all(MYSQLI_ASSOC);
+        $results = $conn->prepare($sql);
+        $results->execute();
+        $_SESSION["search_results"] = $results->fetchAll();
         $s3 = new Aws\S3\S3Client([
             'region'  => 'ca-central-1',
             'version' => 'latest',
@@ -49,5 +44,5 @@
             $i = $i + 1;
         }
         header("Location: results_sample.php");
-    }
+    
 ?>

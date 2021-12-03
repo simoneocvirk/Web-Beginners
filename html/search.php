@@ -61,7 +61,7 @@ session_start();
 
 	<!--Using geolocation API get user's location-->
 	<!-- animation 3/10 -->
-    <form action="search_locationtest.php">
+    <form action="search_location.php">
         <!-- button to trigger Geolocation API -->
         <br><button type="button" onclick="getLocation();">Get Latitude and Longitude</button>
 		<!-- Create two blocks for two text bar on the same row-->
@@ -83,7 +83,7 @@ session_start();
     	<h2 class="center">Search it up by the names!</h2>
     	
     	<br>
-        <form class="search" method="post" action="search_wordtest.php"> 
+        <form class="search" method="post" action="search_word.php"> 
     		<input type="search" id="search" name="search" placeholder="Ex: centro" class="searchTerm"> <br>
     		<!--link to another page by sumbit button-->
             <input type="submit" value="Submit" class="searchButton">
@@ -94,7 +94,7 @@ session_start();
   	<!-- Start of the second search panel -->
 		<div class="col-6 center" style="padding: 30px;" >
             <h2>Or...search it up by ratings!</h2>
-                <form method="post" action="search_ratingtest.php">
+                <form method="post" action="search_rating.php">
 				    <select name="rating">
 						<option value="*" disabled selected>Please select...</option>
 						<option value="5">5 star rating</option>
