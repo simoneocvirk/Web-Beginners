@@ -1,5 +1,7 @@
 <?php
-    include('/home/ubuntu/mysql_auth.php');
+//Insert data of new place in database
+
+    include('PDO_connect.php');
     include('/home/ubuntu/s3_auth.php');
     require 'vendor/autoload.php';
     $name = $_POST["name"];
@@ -50,16 +52,21 @@
             'SourceFile' => $video
         ]);
     }
-    $servername = "localhost";
-    $database = "cs4ww3project";
-    $conn = new mysqli($servername, $dbusername, $dbpassword, $database);
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    } else {
-        $sql = "INSERT INTO places (name, hours, description, address, latitude, longitude, photo, video) VALUES (?,?,?,?,?,?,?,?)";
+    
+        $sql = "INSERT INTO places (name, hours, description, address, latitude, longitude, photo, video) VALUES (:name,:hours,:description,:address,:latitude,:longitude,:photo,:video)";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ssssddss", $name, $hours, $description, $address, $latitude, $longitude, $photo, $video);
+        
+        $stmt->bindParam(':name', $name);
+        $stmt->bindParam(':hours', $hours);
+        $stmt->bindParam(':description', $description);
+        $stmt->bindParam(':address', $address);
+        $stmt->bindParam(':latitude', $latitude);
+        $stmt->bindParam(':longitude', $longitude);
+        $stmt->bindParam(':photo', $photo);
+        $stmt->bindParam(':video', $video);
         $stmt->execute();
+
+        $conn = null;
         header("Location: home.php");
-    }
+    
 ?>
