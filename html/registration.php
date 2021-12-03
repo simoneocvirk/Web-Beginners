@@ -44,7 +44,7 @@ if (isset($_SESSION["valid"])) {
 	<div>
 	<!-- list of form inputs -->
 	<!-- insert javascript here for validate form-->
-	<form name = "RegForm" onsubmit = "return(validate());" method="post" action="registration_action.php">
+	<form name = "RegForm" onsubmit = "return(validate());" method="post" action="registration_actiontest.php">
 		<fieldset class="fieldset">
 			<legend>Sign up</legend>
 			<h4>Please enter your first name: </h4> 
