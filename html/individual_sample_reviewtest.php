@@ -23,7 +23,7 @@
     $stmt->bindParam(':place', $place);
     $stmt->bindParam(':name', $name);
     $stmt->bindParam(':rating', $rating);
-    $stmt->bindParam(':comment', $place);
+    $stmt->bindParam(':comment', $comment);
 
     $stmt->execute();
      
