@@ -49,7 +49,7 @@ if (isset($_SESSION["valid"])) {
                 <!--Hours-->
                 <label><br><textarea name="hours" placeholder="Hours of Operation" cols="50" rows="7" style="font-family: arial;"></textarea><br></label>
 				<!--Description text bar-->
-				<label><br><textarea name="description" placeholder="Description" cols="100" rows="10" style="font-family: arial;"></textarea><br></label>
+				<label><br><textarea name="description" placeholder="Description" cols="100" rows="10" style="font-family: arial;" pattern=".{30,}" title="Please enter at least 30 or more characters"></textarea><br></label>
 				<!-- edited in part 2 -->
 				<label><br><input id="address" type="text" name="address" placeholder="Address" style="width: 60%"><br></label>
 				<!-- button to trigger Geolocation API -->
