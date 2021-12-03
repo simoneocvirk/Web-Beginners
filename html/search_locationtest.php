@@ -18,10 +18,8 @@
         
             $sql = sprintf("SELECT * FROM places p1 LEFT JOIN (SELECT DISTINCT place, ROUND(AVG(rating)) as rate FROM reviews GROUP BY place) review ON p1.name = review.place LEFT JOIN (SELECT name, SQRT(POWER(p2.latitude - %f, 2) + POWER(p2.longitude - %f, 2)) as distance FROM places p2) far ON p1.name = far.name WHERE distance<= ALL (SELECT distance FROM places p3 LEFT JOIN (SELECT DISTINCT place, ROUND(AVG(rating)) as rate FROM reviews GROUP BY place) review ON p3.name = review.place LEFT JOIN (SELECT name, SQRT(POWER(p4.latitude - %f, 2) + POWER(p4.longitude - %f, 2)) as distance FROM places p4) far ON p3.name = far.name)", $latitude, $longitude, $latitude, $longitude);
             echo $sql;
-            $results = $conn->query($sql);
-            if (!$results) {
-                die('Invalid query: ' . $conn->error);
-            }
+            $results = $conn->prepare($sql);
+            $results->execute();
             $_SESSION["search_results"] = $results->fetchAll(MYSQLI_ASSOC);
             $s3 = new Aws\S3\S3Client([
                 'region'  => 'ca-central-1',
