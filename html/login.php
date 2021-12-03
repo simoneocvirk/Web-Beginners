@@ -47,7 +47,7 @@
     ?>
     <hr>
     <div>
-        <form name="login" onsubmit="return(validate());" method="post" action="login_verify.php">
+        <form name="login" onsubmit="return(validate());" method="post" action="login_verifytest.php">
             <?php
                 $default_email = "";
                 if (isset($_SESSION['useremail'])) {
